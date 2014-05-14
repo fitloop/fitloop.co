@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "iron-router": {},
+    "scss": {},
+    "GAnalytics": {},
+    "spin": {},
+    "font-awesome": {}
+  }
+}

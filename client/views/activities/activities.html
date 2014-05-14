@@ -1,0 +1,82 @@
+<template name="activitiesPage">
+  
+  <div class="container" id="page">
+  <h3>Activities</h3>
+  
+  <div class="row clearfix">
+    <div class="column third">
+      <a class="plate" href="/activities/bodyweight-fitness">
+          <!-- <i class="fa fa-anchor"></i> -->
+          <span class="text">Bodyweight Fitness</span>
+          <span class="description">Get Fit Without a Gym</span>
+      </a>
+    </div>
+    <div class="column third">
+      <a class="plate" href="http://www.doyogawithme.com" target="_blank">
+          <!-- <i class="fa fa-anchor"></i> -->
+          <span class="text">Yoga</span>
+          <span class="description">Do Yoga With Me<br/>(doyogawithme.com)</span>
+      </a>
+    </div>
+    <div class="column third">
+      <a class="plate" href="http://www.coolrunning.com/engine/2/2_3/181.shtml" target="_blank">
+          <!-- <i class="fa fa-anchor"></i> -->
+          <span class="text">Running</span>
+          <span class="description">Couch to 5k<br/>(coolrunning.com)</span>
+      </a>
+    </div>
+  </div>
+
+  <h3>Exercises</h3>
+
+    {{> exercisesGrid exercises}}
+  
+
+  </div>
+  
+</template>
+
+<template name="bwfPage">
+  <div class="container" id="page">
+    
+    <h3>Bodyweight Fitness</h3>
+    
+    <blockquote>Bodyweight exercises are strength training exercises that do not require free weights; the practitioner's own weight provides the resistance for the movement. Movements such as the push-up, the pull-up, and the sit-up are some of the most common bodyweight exercises.
+    
+    <footer><cite title="Source Title"><a href="https://en.wikipedia.org/wiki/Bodyweight_exercise">Bodyweight Exercise, Wikipedia</a></cite></footer>
+    </blockquote>
+    <!-- Bodyweight Fitness Routines -->
+    
+    <h4>Routines</h4>
+    
+    <p>1) Only attempt these routines if you are healthy. You'll have a much easier and safer time performing the routines if your diet is in check.</p>
+    <p>2) You will need some minimal <a href="/equipment">equipment</a> to do pulling exercises. (Intermediate Routine)</p>
+    
+    <div class="row">
+      <div class="column half">
+        <a class="plate" href="/routines/bwf-beginner-routine">
+            <!-- <i class="fa fa-anchor"></i> -->
+            <span class="text">Simple Beginner Routine</span>
+            <span class="description">0-3 months experience</span>
+        </a>
+      </div>
+      <div class="column half">
+        <a class="plate" href="/routines/bwf-intermediate-beginner-routine">
+            <!-- <i class="fa fa-anchor"></i> -->
+            <span class="text">Intermediate Beginner Routine</span>
+            <span class="description">3-9 months experience</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- <h4>Exercises</h4>
+    <b><a href="/exercises">View a List of All Exercises</a></b> -->
+
+    <h4>External Resources</h4>
+    <b><a href="http://reddit.com/r/bodyweightfitness" target="_blank">Bodyweight Fitness Subreddit</a></b>
+    <p>A community focused around exercising with minimal or no equipment. Contains a wealth of information.</p>
+
+    <b><a href="http://www.amazon.com/gp/product/1467933120/ref=as_li_tf_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1467933120&linkCode=as2&tag=fitloop-20">Overcoming Gravity: A Systematic Approach to Gymnastics and Bodyweight Strength</a></b>
+    <p>In-depth book for bodyweight training.</p>
+  </div>
+</template>

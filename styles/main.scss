@@ -1,0 +1,296 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial sans-serif;
+  color: #383838;
+}
+
+pre {
+  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+  white-space: -pre-wrap; /* Opera 4 - 6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+  word-wrap: break-word; /* IE 5.5+ */
+  font-family: "Source Sans Pro", Helvetica, Arial sans-serif;
+  margin: 0;
+}
+
+#wrap {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+#page {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+$link-color: #8D8D8D;
+$link-hover-color: #555555;
+
+
+
+.button {
+  padding: 10px;
+  color: #242424;
+  border: 1px solid #b6b6b6;
+}
+
+.alert-warning {
+  text-align: center;
+  background: #ffd6ab;
+  color: #69461c;
+  border: 1px solid #d8ab8e;
+  padding: 10px;
+  margin: 0 auto 20px auto;
+  max-width: 450px;
+}
+
+/* Navigation Bar */
+.top-bar {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+
+  background-color: #fff;
+  // border-bottom: 1px solid #979797;
+  -moz-box-shadow:    0px 2px 4px 0px rgba(0,0,0,0.09);
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.09);
+  box-shadow:         0px 2px 4px 0px rgba(0,0,0,0.09);
+
+  /* FITLOOP LOGO */
+  .logo {
+    text-indent: -9999px;
+    background-image: url("/logo@2x.png") ;
+    width: 82px;
+    height: 19px;
+    background-size:82px 19px;
+    white-space: nowrap;
+    position: absolute;
+    top: 31px;
+    
+    color: #313131;
+    
+    &:visited {
+      color: #313131;
+    }
+    &:hover {
+      color: #313131;
+    }
+  }
+
+  // Dropdown style
+  nav {
+    position: absolute;
+    top: 80px;
+    -moz-box-shadow:    0px 2px 4px 0px rgba(0,0,0,0.09);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.09);
+    box-shadow:         0px 2px 4px 0px rgba(0,0,0,0.09);
+
+    ul {
+      li {
+        color: $link-color;
+        font-size: 20px;
+        border-top: 1px solid #eee;
+        background: white;
+        a {
+          display: block;
+          padding: 20px;
+          color: $link-color;
+          &:visited {
+            color: $link-color;
+          }
+          &:hover {
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-toggle {
+  text-align: right;
+  color: #333;
+  font-size: 26px;
+  background: #fff;
+  position: absolute;
+  top: 25px;
+  right: 26px;
+}
+
+@media (min-width: 40em) {
+  .top-bar nav {
+    z-index: 2000;
+    position: absolute;
+    left: 100px;
+    top: 7px;
+
+    -moz-box-shadow:    none;
+    -webkit-box-shadow: none;
+    box-shadow:         none;
+
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 0px;
+        border: none;
+      }
+    }
+  }
+}
+
+
+.loading {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  h3 {
+    margin-bottom: 40px;
+    color: #a2a2a2;
+  }
+}
+
+
+
+
+.exercise-info .notes {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.panel-container {
+  position: absolute;
+  bottom: 40px;
+  top: 51px;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.equipment-item {
+  position: relative;
+
+  border: 1px solid #bbb;
+  border-bottom: 2px solid #bbb;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 150px;
+
+  .item-image {
+    margin-right: 20px;
+    width: 130px;
+    height: 130px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .item-image > img {
+    max-width: 130px;
+    max-height: 130px;
+  }
+
+  .item-name {
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    font-weight: bold;
+  }
+
+  .price {
+    position: absolute;
+    bottom: 60px;
+    right: 12px;
+    font-size: 14px;
+  }
+  
+  .button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-weight: bold;
+  }
+}
+
+.amazon.button {
+  background: #ffefd3;
+}
+
+/* Home page "plates" */
+.plate {
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+  /*color: black;*/
+  height: 12em;
+  text-align: center;
+  border: 2px dashed #d5d5d5;
+
+  &:hover {
+    background: rgba(255,255,255,0.3);
+  }
+}
+
+a.plate:hover {
+  text-decoration: none;
+}
+
+.plate .fa {
+  line-height: 2em;
+  font-size: 2em;
+  display: block;
+}
+
+.plate .text {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 45px;
+  line-height: 1.5em;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.plate .description {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  color: #666;
+  text-decoration: none;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  background-color: #eee;
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  color: #4a4a4a;
+  a {
+    color: #4a4a4a;
+  }
+}

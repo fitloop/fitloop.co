@@ -1,0 +1,1 @@
+Equipment = new Meteor.Collection('equipment');

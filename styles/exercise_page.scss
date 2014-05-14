@@ -1,0 +1,30 @@
+#exercisePage {
+  max-width: 670px;
+  margin: 0 auto;
+}
+
+.exercise-grid-item {
+  display: inline-block;
+  border: 2px solid #cfcfcf;
+  padding: 20px;
+  color: #525252;
+  width: 100%;
+  // max-width: 400px;
+  margin: 0 10px 12px 0;
+}
+
+.exercise-grid-item:hover {
+  color: #343434;
+  background: #f4f4f4;
+  border: 2px solid #c0c0c0;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .exercise-grid-item {
+    width: 300px;
+  }
+}

@@ -1,0 +1,32 @@
+<template name="exercisePage">
+  <div id="exercisePage">
+    <div class="exercise-info">
+      <div class="panel-body">
+        <div class="video-section">
+          {{#if videoId}}
+            <iframe class="youtube-player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/{{videoId}}?autoplay=0" allowfullscreen frameborder="0">
+            </iframe>
+          {{else}}
+            <span class="message">Please select an exercise on the left.</span>
+          {{/if}}
+        </div>
+
+        <div class="container">
+          <h3 class="panel-title">
+            {{name}}
+          </h3>
+
+          <pre class="notes">{{notes}}</pre>
+
+        {{#if equipment}}
+          <h5>Equipment</h5>
+          {{#each equipment}}
+            {{> equipmentItem}}
+          {{/each}}
+        {{/if}}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

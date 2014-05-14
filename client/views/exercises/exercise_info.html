@@ -1,0 +1,33 @@
+<template name="exerciseInfo">
+  <div class="exercise-info">
+    <div class="panel-body">
+      <div class="video-section">
+        {{#if exercise.videoId}}
+          <iframe class="youtube-player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/{{exercise.videoId}}?autoplay=0" allowfullscreen frameborder="0">
+          </iframe>
+        {{else}}
+          <span class="message">Please select an exercise on the left.</span>
+        {{/if}}
+      </div>
+
+      <div class="container">
+        <h3 class="panel-title">
+          {{exercise.name}}
+        </h3>
+
+        <p class="notes">{{exercise.notes}}</p>
+
+      {{#if exercise.equipment}}
+        <h5>Equipment</h5>
+        {{#each exercise.equipment}}
+          {{> equipmentItem}}
+        {{/each}}
+      {{/if}}
+
+      <br/>
+      <a href="mailto:hi@fitloop.co">Suggest an improvement</a>
+
+      </div>
+    </div>
+  </div>
+</template>

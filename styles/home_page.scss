@@ -1,0 +1,73 @@
+.home-page {
+  z-index: -100;
+  width: 100%;
+  height: 350px;
+  background: #5a7d45 url("http://fitloop.s3.amazonaws.com/forest-path-flipped.jpg") no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  position: relative;
+
+  h2 {
+    display: block;
+    color: #ffffff;
+    text-shadow: 0px 0px 15px #000;
+    font-size: 3em;
+    font-weight: normal;
+    padding-top: 60px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  ol {
+    display: block;
+    color: #ffffff;
+    text-shadow: 0px 0px 7px #000;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol li {
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    display: block;
+    color: #cecece;
+    text-shadow: 0px 0px 15px #000;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page {
+    height: 300px;
+    h2 {
+      padding-top: 60px;
+      font-size: 2em;
+    }
+
+    ol {
+      font-size: 1.5em;
+    }
+
+  }
+}
+
+h2.path-follow {
+  text-align: center;
+  font-size: 1.7em;
+}
+
+
+.select-routine {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

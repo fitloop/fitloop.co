@@ -1,0 +1,47 @@
+<template name="routinePage">
+  {{> timer}}
+
+  <div id="routine-page">
+    <div class="container">
+      <div class="selection-panel">{{> routine}}</div>
+      <div class="detail-panel">{{> exerciseInfo}}</div>
+      
+    </div>
+  </div>
+    
+</template>
+
+<template name="routine">
+  
+  <div class="routine">
+    <h2>{{name}}</h2>
+  
+    <div class="description">
+      <pre>{{description}}</pre>
+      <br/>
+      Source: <a href="{{source}}" target="_blank">{{source}}</a>
+    </div>
+
+    <div class="alert alert-warning">
+      <b>If something hurts, stop!</b>
+    </div>
+
+    {{#each progressions}}
+      {{#if notes}}
+        <div class="notes">
+          {{notes}}
+        </div>
+      {{/if}}
+      <div class="panel">
+        <h3>{{name}}</h3>
+        <ul>
+          {{#each exercises}}
+            <li>{{> exerciseItem}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}  
+  </div>
+
+  
+</template>
