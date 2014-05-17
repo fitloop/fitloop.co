@@ -6,7 +6,9 @@
       "scss": {},
       "GAnalytics": {},
       "spin": {},
-      "font-awesome": {}
+      "font-awesome": {},
+      "npm": {},
+      "phantomjs": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +35,16 @@
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v4.0.3",
         "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "phantomjs": {
+        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
+        "tag": "v0.0.2",
+        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

@@ -4,6 +4,8 @@
     "scss": {},
     "GAnalytics": {},
     "spin": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "npm": {},
+    "phantomjs": {}
   }
 }
