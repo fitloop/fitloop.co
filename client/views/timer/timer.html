@@ -2,10 +2,10 @@
 <template name='timer'>
   <audio id="audioSprite" src="/audiosprite.mp3" preload="auto"></audio>
   <div class="timer-panel">
-    <div class="timer"></div>
+    <div id="timer"></div>
     <form>
       <select class="form-control time-select">
-        <option value="60">Set timer...</option>
+        <option value="60">Set</option>
         <option value="30">30 seconds (Rest 30-90 secs for Endurance)</option>
         <option value="60">1 minute (Rest 60-90 secs for Muscle Size)</option>
         <option value="90">1 min 30 sec</option>
@@ -13,7 +13,7 @@
         <option value="180">3 mins (Rest > 3 mins for Strength)</option>
         <option value="300">5 minutes</option>
       </select>
-      <button class="start-timer button">Start</button>
+      <button class="start-timer button"><i class="fa fa-play"></i></button>
       <!-- <button class="pause-timer btn btn-info">Pause</button> -->
       <button class="reset-timer button"><i class="fa fa-undo"></i></button>
       <button class="sub-ten btn button"><i class="fa fa-minus"></i></button>

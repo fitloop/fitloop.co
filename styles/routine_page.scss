@@ -1,56 +1,3 @@
-.timer-panel {
-  position: fixed;
-  top: 0px;
-  z-index: 1000;
-  background: #fff;
-  width: 320px;
-  height: 80px;
-  padding: 10px;
-  left: 50%;
-  margin-left: 200px;
-
-  .timer {
-    z-index: 2000;
-    position: absolute;
-    top: 0px;
-    right: 190px;
-
-  }
-
-  .time-select {
-    width: 120px;
-    position: absolute;
-    top: 50px;
-    left: 10px;
-  }
-
-  .button {
-    font-size: 14px;
-    background: white;
-    border: 1px solid #313131;
-    position: relative;
-    left: 140px;
-    top: 12px;
-    &:hover {
-      background: #ededed;
-    }
-  }
-}
-
-@media (max-width: 1023px) {
-  .timer-panel {
-    right: 0;
-    left: auto;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .timer-panel {
-    display: none;
-  }
-}
-
 // .youtube-player {
 //   display:block;
 //   max-width: 620px;
@@ -64,21 +11,13 @@
 // }
 
 
-.timer-panel {
-  margin-bottom: 10px;
-}
-
-.time-select {
-  margin-bottom: 10px;
-}
-
 
 #routine-page {
-  background: #e1e1e1;
-  background-image: url("/graphy_@2X.png");
+  background: none repeat scroll 0% 0% rgba(245, 244, 242, 1);
+  // background-image: url("/graphy_@2X.png");
   // background-position: 0px 33px;
   // background-size: 80px 160px;
-
+  margin-bottom: 70px;
 }
 
 
@@ -98,41 +37,46 @@
   .description {
     background: #fff;
     padding: 10px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     font-size: 16px;
     line-height: 1.3em;
     margin-bottom: 10px;
+    box-shadow: 0px 1px 6px #D7DDE0;
   }
 
   .notes {
     display: block;
     text-align: center;
-    background: #fff5cd;
-    color: #696227;
-    border: 1px solid #cec7a5;
+    // background: none repeat scroll 0% 0% rgba(229, 251, 216, 1);
+    color: rgba(105, 114, 120, 1);
+    // border: 1px solid rgba(208, 225, 183, 1);
     padding: 10px;
-    margin: 0 auto 20px auto;
+    margin: 0px auto 20px;
     max-width: 450px;
+    border-radius: 3px;
+    font-weight: 500;
   }
 
   .panel {
     background: #fff;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     max-width: 350px;
     margin: 0 auto 20px auto;
+    box-shadow: 0px 1px 6px #D7DDE0;
     
     h3 {
       line-height: 1em;
       font-size: 15px;
       margin: 0;
       padding: 10px;
-      border-bottom: 1px solid #ccc;
-      background: #e4f2f2;
-      color: #4d5973;
+      // border-bottom: 1px solid #ccc;
+      background: none repeat scroll 0% 0% rgba(108, 149, 111, 1);
+      color: #fff;
+      font-weight: 500;
     }
 
     ul li {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #DEDFE0;
 
       &:last-child {
         border-bottom: 0;
@@ -155,22 +99,24 @@
 .detail-panel {
   position: fixed;
   top: 80px;
-  bottom: 40px;
+  bottom: 70px;
   left: 50%;
   margin-left: -107px;
+  
   width: 620px;
   background: #ffffff;
   
   overflow-y: auto;
 
-  border-left: 1px solid #979797;
-  border-right: 1px solid #979797;
+  // border-left: 1px solid #979797;
+  // border-right: 1px solid #979797;
+  // border-bottom: 1px solid #979797;
   -moz-box-shadow:    0px 0px 9px 0px rgba(0,0,0,0.09);
   -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.09);
   box-shadow:         0px 0px 9px 0px rgba(0,0,0,0.09);
 
   .exercise-info {
-
+    padding-bottom: 20px;
   }
 }
 

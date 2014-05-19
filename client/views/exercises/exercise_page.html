@@ -4,8 +4,7 @@
       <div class="panel-body">
         <div class="video-section">
           {{#if videoId}}
-            <iframe class="youtube-player" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/{{videoId}}?autoplay=0" allowfullscreen frameborder="0">
-            </iframe>
+            {{> exerciseVideo}}
           {{else}}
             <span class="message">Please select an exercise on the left.</span>
           {{/if}}

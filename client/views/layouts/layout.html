@@ -1,0 +1,15 @@
+<template name="layout">
+    {{> navigationBar}}
+    <div id="wrap">
+      {{> yield}}
+      {{> footer}}
+    </div>
+
+</template>
+
+<template name="routineLayout">
+  {{> navigationBar}}
+    <div id="wrap">
+      {{> yield}}
+    </div>
+</template>
