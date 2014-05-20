@@ -4,27 +4,45 @@
 }
 
 .exercise-grid-item {
+  position: relative;
   display: inline-block;
-  border: 2px solid #cfcfcf;
-  padding: 20px;
+  // border: 2px solid #cfcfcf;
+  padding: 0px;
   color: #525252;
   width: 100%;
   // max-width: 400px;
-  margin: 0 10px 12px 0;
+  margin: 0 10px 20px 0;
+  height: 168px;
+  text-align: left;
+
+
+  img {
+    width: 100%;
+    height: 168px;
+  }
+
+  .text {
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    color: #fff;
+    padding: 7px;
+    // font-weight: 500;
+  }
+
 }
 
 .exercise-grid-item:hover {
-  color: #343434;
-  background: #f4f4f4;
-  border: 2px solid #c0c0c0;
+  .text {
+    background: #000;
+  }
 }
 
 .center {
   text-align: center;
 }
 
-@media (min-width: 40rem) {
-  .exercise-grid-item {
+.exercise-grid-item {
     width: 300px;
-  }
 }
