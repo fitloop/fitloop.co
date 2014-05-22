@@ -1,12 +1,26 @@
 Template.dietPage.helpers({
+  isMale: function() {
+    if (Session.get("gender") === "male")
+      return "checked";
+  },
+  isFemale: function() {
+    if (Session.get("gender") === "female")
+      return "checked";
+  },
   heightFeet: function() {
     return Session.get("heightFeet");
   },
   heightInches: function() {
     return Session.get("heightInches");
   },
+  heightCm: function() {
+    return Session.get("heightCm");
+  },
   weightLbs: function() {
     return Session.get("weightLbs");
+  },
+  weightKg: function() {
+    return Session.get("weightKg");
   },
   age: function() {
     return Session.get("age");
@@ -35,18 +49,30 @@ Template.dietPage.helpers({
     else if (sl = 1.9)
       return "Extreme level";
   },
-  tdee : function() {
+  tdee: function() {
     return Session.get("tdee");
   },
-  loseWeightCalories: function() {
-    return (Session.get("tdee")-1000) + " to " + (Session.get("tdee")-500);
+  calories : function() {
+    return Session.get("tdee") + (500*Session.get("goalRate"));
   },
-  gainWeightCalories: function() {
-    return (Session.get("tdee")+500) + " to " + (Session.get("tdee")+1000);
+  goalRateText : function() {
+    var goalRateTexts = {
+      "-1"   : "lose 1 pound per week",
+      "-1.5" : "lose 1.5 pounds per week",
+      "-2"   : "lose 2 pounds per week",
+      "0"    : "maintain weight",
+      "1"    : "gain 1 pound per week",
+      "1.5"  : "gain 1.5 pounds per week",
+      "2"    : "gain 2 pounds per week",
+    }
+    return goalRateTexts[Session.get("goalRate")];
   }
 });
 
 Deps.autorun(function() {
+
+  // Mifflin-St Jeor
+
   var imperialHeight = Session.get("heightFeet")*12 + Session.get("heightInches")*1;
   var metricHeight = imperialHeight * 2.54;
 
@@ -58,10 +84,12 @@ Deps.autorun(function() {
 
   var tdee = null;
 
+  var baseMifflin = (10 * metricWeight ) + ( 6.25 * metricHeight ) - ( 5 * age );
+
   if(Session.get("gender") === "male")
-    tdee = Math.round((66.47 + ( 13.75 * metricWeight ) + ( 5.003 * metricHeight ) - ( 6.755 * age )) * stressLevel);
+    tdee = Math.round(((baseMifflin + 5) * stressLevel) / 10) * 10;
   else if(Session.get("gender") === "female")
-    tdee = Math.round((655.1 + ( 9.563 * metricWeight ) + (  1.850 * metricHeight ) - ( 4.676 * age )) * stressLevel);
+    tdee = Math.round(((baseMifflin - 161) * stressLevel) / 10) * 10;
 
 
   Session.set("tdee", tdee);
@@ -69,6 +97,9 @@ Deps.autorun(function() {
 
 Template.dietPage.rendered = function() {
   document.title = "Diet" + " - Fitloop";
+
+  updateMetricWeight();
+  updateMetricHeight();
 }
 
 Template.dietPage.events({
@@ -81,17 +112,62 @@ Template.dietPage.events({
   },
   'change #weight-lbs' : function () {
     Session.set("weightLbs", $('#weight-lbs').val());
+    updateMetricWeight();
+  },
+  'change #weight-kg' : function () {
+    Session.set("weightKg", $('#weight-kg').val());
+    updateImperialWeight();
   },
   'change #height-feet' : function () {
-    // var imperialHeight = $('#height-feet').val()*12 + $('#height-inches').val();
-    // var metricHeight = imperialHeight * 2.54;
     Session.set("heightFeet", $('#height-feet').val());
+    updateMetricHeight();
   },
   'change #height-inches' : function () {
     Session.set("heightInches", $('#height-inches').val());
+    updateMetricHeight();
+  },
+  'change #height-cm' : function () {
+    Session.set("heightCm", $('#height-cm').val());
+    updateImperialHeight();
   },
   'change input[name="gender"]' : function () {
     Session.set("gender", $('input[name="gender"]:checked').val());
-  }
+  },
+  'change #goal-rate' : function () {
+    Session.set("goalRate", $('#goal-rate').val());
+  },
 
 })
+
+var updateMetricHeight = function() {
+  var imperialHeight = Session.get("heightFeet")*12 + Session.get("heightInches")*1;
+  var metricHeight = imperialHeight * 2.54;
+  Session.set("heightCm", Math.round(metricHeight));
+}
+
+var updateImperialHeight = function() {
+  var metricHeight = Session.get("heightCm");
+  var imperialInches = metricHeight / 2.54;
+
+  var imperialFeet = Math.floor(imperialInches / 12);
+  imperialInches = imperialInches % 12;
+  imperialInches = Math.round(imperialInches*2) / 2;
+
+  Session.set("heightFeet", imperialFeet);
+  Session.set("heightInches", imperialInches);
+}
+
+var updateMetricWeight = function() {
+  var imperialWeight = Session.get("weightLbs");
+  var metricWeight = imperialWeight*0.453592;
+  metricWeight = Math.round(metricWeight*10) / 10;
+  Session.set("weightKg", metricWeight );
+}
+
+var updateImperialWeight = function() {
+  var metricWeight = Session.get("weightKg");
+  var imperialWeight = metricWeight / 0.453592;
+  imperialWeight = Math.round(imperialWeight);
+  Session.set("weightLbs", imperialWeight );
+}
+

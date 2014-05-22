@@ -11,8 +11,8 @@
       <div class="section">
         <span class="title">Gender</span>
         <div class="controls">
-          <input type="radio" name="gender" id="male" value="male"> <label for="male">Male</label>
-          <input type="radio" name="gender" id="female" value="male"> <label for="female">Female</label>
+          <input type="radio" name="gender" id="male" value="male" {{isMale}}> <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" value="female" {{isFemale}}> <label for="female">Female</label>
         </div>
       </div>
       <div class="section">
@@ -24,15 +24,24 @@
       <div class="section">
         <span class="title">Height</span>
         <div class="controls">
-          <input type="number" value="{{heightFeet}}" name="height-feet" id="height-feet" min="0" max="8"> <label for="height-feet">Ft</label>
-          <input type="number" value="{{heightInches}}" name="height-inches" id="height-inches" min="0" max="12" step="0.5"> <label for="height-inches">In</label>
+          <input type="number" value="{{heightFeet}}" name="height-feet" id="height-feet" min="0" max="8"> <label for="height-feet">ft</label>
+          <input type="number" value="{{heightInches}}" name="height-inches" id="height-inches" min="0" max="12" step="0.5"> <label for="height-inches">in</label>
+
+
+          <span class="or">or</span>
+
+          <input type="number" value="{{heightCm}}" name="height-cm" id="height-cm" min="0"> <label for="height-cm">cm</label>
         </div>
       </div>
 
       <div class="section">
         <span class="title">Weight</span>
         <div class="controls">
-          <input type="number" value="{{weightLbs}}" name="weight-lbs" id="weight-lbs" min="0"> <label for="weight-lbs">Lbs</label>
+          <input type="number" value="{{weightLbs}}" name="weight-lbs" id="weight-lbs" min="0"> <label for="weight-lbs">lbs</label>
+
+          <span class="or">or</span>
+
+          <input type="number" value="{{weightKg}}" name="weight-kg" id="weight-kg" min="0" step=".1"> <label for="weight-kg">kg</label>
         </div>
       </div>
 
@@ -43,21 +52,37 @@
           <label for="stress-level" id="stress-level-label">{{stressLevelText}}</label>
         </div>
       </div>
+
+      <div class="section">
+        <span class="title">Goal</span>
+        <div class="controls">
+          <select name="goal-rate" id="goal-rate">
+            <option value="-1">Lose 1 pound per week</option>
+            <option value="-1.5">Lose 1.5 pounds per week</option>
+            <option value="-2">Lose 2 pounds per week</option>
+            <option value="0">Maintain Weight</option>
+            <option value="1">Gain 1 pound per week</option>
+            <option value="1.5">Gain 1.5 pounds per week</option>
+            <option value="2">Gain 2 pounds per week</option>
+          </select>
+          
+        </div>
+      </div>
+
+      {{#if tdee}}
+      <div class="section">
+        <span class="title">Result</span>
+        <div class="controls">
+        To <b>{{goalRateText}}</b>, net <b>{{calories}}</b> calories per day.
+        </div>
+      </div>
+      {{/if}}
      
     </form>
 
-    {{#if tdee}}
-      <h4>Results</h4>
-      <p>
-        To <b>maintain weight</b>, eat <b>{{tdee}}</b> calories per day. (TDEE)
-      </p>
-      <p>
-        To <b>lose weight</b>, eat <b>{{loseWeightCalories}}</b> calories per day.
-      </p>
-      <p>
-        To <b>gain weight</b>, eat <b>{{gainWeightCalories}}</b> calories per day.
-      </p>
-    {{/if}}
+    <p>
+      * Net calories is your calorie intake after eating (add calories) and exercising (subtract calories).
+    </p>
     
     
 
