@@ -1,0 +1,46 @@
+.tdee-form {
+  font-size: 18px;
+
+  .section:nth-child(even)
+  {
+    background: #d3eadd;
+    .title {
+      background: #bfdccb;
+    }
+  }
+
+  .section {
+    background: #eaf6ef;
+    height: 50px;
+    position: relative;
+
+    .title {
+      width: 100px;
+      background: #d5eade;
+      font-weight: 500;
+      display: block;
+      position: absolute;
+      padding: 10px;
+      border-right: 1px solid #a9ccb7;
+      margin: 0;
+      height: 50px;
+      color: #143a24;
+    }
+
+    .controls {
+      display: block;
+      padding: 10px;
+      position: absolute;
+      left: 100px;
+      height: 50px;
+    }
+  }
+
+  input[type="number"] {
+    width: 60px;
+  }
+
+  input#female {
+    margin-left: 10px;
+  }
+}

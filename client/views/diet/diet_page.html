@@ -1,0 +1,70 @@
+<template name="dietPage">
+  <div class="container" id="page">
+    <h3>Diet (beta)</h3>
+    
+    <p>
+      Whether you want to lose weight or gain muscle, diet is the key ingredient. To get started adjusting your diet, first you need to figure out your Total Daily Energy Expediture (TDEE), which measures the amount of calories your body needs to function in a day.
+    </p>
+
+    <h4>Find your TDEE</h4>
+    <form class="tdee-form">
+      <div class="section">
+        <span class="title">Gender</span>
+        <div class="controls">
+          <input type="radio" name="gender" id="male" value="male"> <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" value="male"> <label for="female">Female</label>
+        </div>
+      </div>
+      <div class="section">
+        <span class="title">Age</span>
+        <div class="controls">
+          <input type="number" value="{{age}}" name="age" id="age"> <label for="age">Years</label>
+        </div>
+      </div>
+      <div class="section">
+        <span class="title">Height</span>
+        <div class="controls">
+          <input type="number" value="{{heightFeet}}" name="height-feet" id="height-feet" min="0" max="8"> <label for="height-feet">Ft</label>
+          <input type="number" value="{{heightInches}}" name="height-inches" id="height-inches" min="0" max="12" step="0.5"> <label for="height-inches">In</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="title">Weight</span>
+        <div class="controls">
+          <input type="number" value="{{weightLbs}}" name="weight-lbs" id="weight-lbs" min="0"> <label for="weight-lbs">Lbs</label>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="title">Exercise</span>
+        <div class="controls">
+          <input type="range" min="1.2" max="1.9" step=".01" value="{{stressLevel}}" name="stress-level" id="stress-level" />
+          <label for="stress-level" id="stress-level-label">{{stressLevelText}}</label>
+        </div>
+      </div>
+     
+    </form>
+
+    {{#if tdee}}
+      <h4>Results</h4>
+      <p>
+        To <b>maintain weight</b>, eat <b>{{tdee}}</b> calories per day. (TDEE)
+      </p>
+      <p>
+        To <b>lose weight</b>, eat <b>{{loseWeightCalories}}</b> calories per day.
+      </p>
+      <p>
+        To <b>gain weight</b>, eat <b>{{gainWeightCalories}}</b> calories per day.
+      </p>
+    {{/if}}
+    
+    
+
+
+
+    <h4>Links</h4>
+    <a href="http://www.reddit.com/r/Fitness/wiki/faq#wiki_diet_details">In-depth details about diet on /r/fitness</a> <br/>
+    <a href="http://www.reddit.com/r/bodyweightfitness/wiki/training_guide#wiki_diet_-_weight_loss_or_gain">/r/bodyweightfitness diet guide</a>
+  </div>
+</template>
