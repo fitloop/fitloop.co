@@ -53,21 +53,38 @@ Template.dietPage.helpers({
     return Session.get("tdee");
   },
   calories : function() {
-    return Session.get("tdee") + (500*Session.get("goalRate"));
+    return Session.get("calories");
   },
   goalRateText : function() {
-    var goalRateTexts = {
-      "-1"   : "lose 1 pound per week",
-      "-1.5" : "lose 1.5 pounds per week",
-      "-2"   : "lose 2 pounds per week",
-      "0"    : "maintain weight",
-      "1"    : "gain 1 pound per week",
-      "1.5"  : "gain 1.5 pounds per week",
-      "2"    : "gain 2 pounds per week",
-    }
-    return goalRateTexts[Session.get("goalRate")];
+    return goals[Session.get("goalRate")].text.toLowerCase();
+  },
+  goalOptions: function() {
+    return goals;
+  },
+  goalSelected : function() {
+    if (this.option === Session.get("goalRate"))
+      return "selected";
   }
 });
+
+goals = [
+  {
+    option: 0,
+    text: "Lose Weight",
+  },
+  {
+    option: 1,
+    text: "Maintain Weight",
+  },
+  {
+    option: 2,
+    text: "Gain 1 lbs per week",
+  },
+  {
+    option: 3,
+    text: "Gain 2 lbs per week",
+  },
+];
 
 Deps.autorun(function() {
 
@@ -92,6 +109,24 @@ Deps.autorun(function() {
     tdee = Math.round(((baseMifflin - 161) * stressLevel) / 10) * 10;
 
 
+  var calories = tdee;
+  
+  // lose weight
+  if(Session.get("goalRate") === "0")
+  {
+    calories = .8*tdee;
+  } else if (Session.get("goalRate") === "1")
+  {
+    calories = tdee;
+  } else if (Session.get("goalRate") === "2")
+  {
+    calories = tdee + 500;
+  } else if (Session.get("goalRate") === "3")
+  {
+    calories = tdee + 1000;
+  }
+
+  Session.set("calories", calories);
   Session.set("tdee", tdee);
 });
 

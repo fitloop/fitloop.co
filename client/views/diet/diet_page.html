@@ -57,13 +57,9 @@
         <span class="title">Goal</span>
         <div class="controls">
           <select name="goal-rate" id="goal-rate">
-            <option value="-1">Lose 1 pound per week</option>
-            <option value="-1.5">Lose 1.5 pounds per week</option>
-            <option value="-2">Lose 2 pounds per week</option>
-            <option value="0">Maintain Weight</option>
-            <option value="1">Gain 1 pound per week</option>
-            <option value="1.5">Gain 1.5 pounds per week</option>
-            <option value="2">Gain 2 pounds per week</option>
+            {{#each goalOptions}}
+              <option value="{{option}}" {{goalSelected}}>{{text}}</option>
+            {{/each}}
           </select>
           
         </div>
@@ -73,16 +69,16 @@
       <div class="section">
         <span class="title">Result</span>
         <div class="controls">
-        To <b>{{goalRateText}}</b>, net <b>{{calories}}</b> calories per day.
+        To <b>{{goalRateText}}</b>, eat <b>{{calories}}</b> calories per day.
         </div>
       </div>
       {{/if}}
      
     </form>
 
-    <p>
+    <!-- <p>
       * Net calories is your calorie intake after eating (add calories) and exercising (subtract calories).
-    </p>
+    </p> -->
     
     
 
