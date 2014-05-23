@@ -73,6 +73,14 @@ $link-hover-color: #555555;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.09);
   box-shadow:         0px 2px 4px 0px rgba(0,0,0,0.09);
 
+  .super {
+    font-size: 12px;
+    color: #cd00a2;
+    position: relative;
+    top: -10px;
+    font-weight: bold;
+  }
+
   /* FITLOOP LOGO */
   .logo {
     text-indent: -9999px;

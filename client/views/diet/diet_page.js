@@ -79,7 +79,7 @@ goals = [
   {
     option: 0,
     text: "Lose Weight",
-    explanation: "Calculated by subracting 20% of your TDEE"
+    explanation: "Calculated by subtracting 20% of your TDEE"
   },
   {
     option: 1,
