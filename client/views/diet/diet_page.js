@@ -31,19 +31,24 @@ Template.dietPage.helpers({
   },
   stressLevelText : function() {
     var sl = Session.get("stressLevel");
-    if(sl < 1.375)
+
+    if(sl < 1.22)
       return "No exercise";
+    else if(sl < 1.3)
+      return "Little exercise";
+    else if(sl < 1.4)
+      return "Mild exercise (jogging, biking, frequent walking)";
     else if (sl < 1.4187)
-      return "3 times a week";
+      return "3 times a week (intensive exercise for 30 to 60 minutes)";
     else if (sl < 1.4625)
-      return "4 times a week";
+      return "4 times a week (intensive exercise for 30 to 60 minutes)";
     else if (sl < 1.5063)
-      return "5 times a week";
+      return "5 times a week (intensive exercise for 30 to 60 minutes)";
     else if (sl < 1.55)
-      return "6 times a week";
+      return "6 times a week (intensive exercise for 30 to 60 minutes)";
     // return "No Exercise";
     else if (sl < 1.7)
-      return "Everyday";
+      return "Everyday (intensive exercise for 30 to 60 minutes)";
     else if (sl < 1.9)
       return "Heavy or (Labor-intensive) activity level";
     else if (sl = 1.9)
@@ -64,25 +69,32 @@ Template.dietPage.helpers({
   goalSelected : function() {
     if (this.option === Session.get("goalRate"))
       return "selected";
-  }
+  },
+  explanation: function() {
+    return goals[Session.get("goalRate")].explanation;
+  },
 });
 
 goals = [
   {
     option: 0,
     text: "Lose Weight",
+    explanation: "Calculated by subracting 20% of your TDEE"
   },
   {
     option: 1,
     text: "Maintain Weight",
+    explanation: "This is your TDEE"
   },
   {
     option: 2,
     text: "Gain 1 lbs per week",
+    explanation: "Calculated by adding 500 calories to your TDEE"
   },
   {
     option: 3,
     text: "Gain 2 lbs per week",
+    explanation: "Calculated by adding 1000 calories to your TDEE"
   },
 ];
 

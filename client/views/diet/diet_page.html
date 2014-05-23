@@ -3,10 +3,10 @@
     <h3>Diet (beta)</h3>
     
     <p>
-      Whether you want to lose weight or gain muscle, diet is the key ingredient. To get started adjusting your diet, first you need to figure out your Total Daily Energy Expediture (TDEE), which measures the amount of calories your body needs to function in a day.
+      Whether you want to lose weight or gain muscle, diet is the key ingredient. To get started adjusting your diet, first you need to figure out your Total Daily Energy Expediture (TDEE), which measures the amount of calories your body needs to function in a day, and then find out how many calories to eat in a day based on your goals.
     </p>
 
-    <h4>Find your TDEE</h4>
+    <h4>How many calories should I eat in a day?</h4>
     <form class="tdee-form">
       <div class="section">
         <span class="title">Gender</span>
@@ -69,16 +69,16 @@
       <div class="section">
         <span class="title">Result</span>
         <div class="controls">
-        To <b>{{goalRateText}}</b>, eat <b>{{calories}}</b> calories per day.
+        To <b>{{goalRateText}}</b>, eat <b>{{calories}}</b> calories per day. *
         </div>
       </div>
       {{/if}}
      
     </form>
 
-    <!-- <p>
-      * Net calories is your calorie intake after eating (add calories) and exercising (subtract calories).
-    </p> -->
+    <p>
+      * {{explanation}} ({{tdee}}).
+    </p>
     
     
 
