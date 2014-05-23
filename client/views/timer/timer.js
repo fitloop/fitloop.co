@@ -1,7 +1,4 @@
-
-Template.timer.rendered = function() {
-
-  var audio = document.getElementById('audioSprite');
+// Template.timer.rendered = function() {
 
   function setButtonStart() {
     $('.start-timer').html('<i class="fa fa-play">');
@@ -11,22 +8,6 @@ Template.timer.rendered = function() {
     $('.start-timer').html('<i class="fa fa-pause">');
   }
   
-  function playTick() {
-    audio.play();
-    int = setInterval(function() {
-        if (audio.currentTime > 2.5) {
-            audio.pause();
-            audio.currentTime = 0;
-            clearInterval(int);
-        }
-    }, 10);
-  }
-
-  function playBeeps(){
-    clearInterval(int);
-    audio.currentTime = 2.9;
-    audio.play();
-  }
 
   // Timer
   var timer = {
@@ -39,6 +20,7 @@ Template.timer.rendered = function() {
       $('#timer').text("01:00");
     },
     start: function() {
+      timer.run();
       timer.running = true;
       var m = timer.time.getMinutes();
       var s = timer.time.getSeconds();
@@ -47,6 +29,7 @@ Template.timer.rendered = function() {
       s = (s < 10) ? "0"+s : s;
       
       timer.render();
+      timer.onTick(m*60 + s);
 
       timer.time.setSeconds(timer.time.getSeconds()-1);
 
@@ -65,8 +48,12 @@ Template.timer.rendered = function() {
     onFinish: function() {
 
     },
+    onTick: function(secondsRemaining) {
+
+    },
     pause: function() {
       clearTimeout(this.timeout);
+      this.stop();
       this.running = false;
     },
     resume: function () {
@@ -95,15 +82,57 @@ Template.timer.rendered = function() {
   timer.onFinish = function() {
     setButtonStart();
           // setTimeout(function () {
-    timer.setTime(Session.get('timerTime'));
+    timer.setTime(Session.get('timerMax'));
           // }, 3000);
     playBeeps();
   }
 
-  if(typeof Session.get('timerTime') == 'undefined')
-    Session.set('timerTime', 60);
+  timer.onTick = function(secondsRemaining) {
+    Session.set('timerTime', secondsRemaining);
+  }
 
-  timer.setTime(Session.get('timerTime'));
+  timer.run = function()
+  {
+    Session.set('timerRunning', true);
+  }
+
+  timer.stop = function() {
+    Session.set('timerRunning', false);
+  }
+
+Template.timer.rendered = function() {
+
+  var audio = document.getElementById('audioSprite');
+
+  var playTick = function() {
+    audio.play();
+    int = setInterval(function() {
+        if (audio.currentTime > 2.5) {
+            audio.pause();
+            audio.currentTime = 0;
+            clearInterval(int);
+        }
+    }, 10);
+  }
+
+  var playBeeps = function(){
+    clearInterval(int);
+    audio.currentTime = 2.9;
+    audio.play();
+  }
+
+  if(Session.get('timerRunning', true) && timer.running === false)
+  {
+    // console.log('resume time');
+    // console.log(Session.get('timerTime'));
+    timer.setTime(Session.get('timerTime'));
+    timer.start();
+    setButtonPause();
+  } else
+  {
+    // console.log(Session.get('timerTime'));
+    timer.setTime(Session.get('timerTime'));
+  }
 
   $('button.start-timer').click(function(e) {
     e.preventDefault();
@@ -123,13 +152,13 @@ Template.timer.rendered = function() {
     e.preventDefault();
     timer.pause();
     setButtonStart();
-    timer.setTime(Session.get('timerTime'));
+    resetTimer();
   });
 
   $('select.time-select').change(function(e) {
     e.preventDefault();
-    Session.set('timerTime', parseInt(e.target.value));
-    timer.setTime(Session.get('timerTime'));
+    Session.set('timerMax', parseInt(e.target.value));
+    resetTimer();
   });
 
   $('button.add-ten').click(function(e) {
@@ -138,8 +167,8 @@ Template.timer.rendered = function() {
     {
       timer.setTime(timer.getTime() + 10);
     } else {
-      Session.set('timerTime', timer.getTime() + 10);
-      timer.setTime(Session.get('timerTime'));
+      Session.set('timerMax', timer.getTime() + 10);
+      resetTimer();
     }
   });
 
@@ -149,8 +178,13 @@ Template.timer.rendered = function() {
     {
       timer.setTime(timer.getTime() - 10);
     } else if(timer.getTime() > 10){
-      Session.set('timerTime', timer.getTime() - 10);
-      timer.setTime(Session.get('timerTime'));
+      Session.set('timerMax', timer.getTime() - 10);
+      resetTimer();
     }
   });
+
+  function resetTimer() {
+    timer.setTime(Session.get('timerMax'));
+    Session.set('timerTime', Session.get('timerMax'));
+  }
 }

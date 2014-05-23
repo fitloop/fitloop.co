@@ -5,3 +5,8 @@ Session.setDefault("heightFeet", 5);
 Session.setDefault("heightInches", 9);
 Session.setDefault("goalRate", 1);
 Session.setDefault("gender", "male");
+
+
+Session.setDefault('timerTime', 60);
+Session.setDefault('timerMax', 60);
+Session.setDefault('timerRunning', false);
