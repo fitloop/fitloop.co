@@ -88,12 +88,12 @@ goals = [
   },
   {
     option: 2,
-    text: "Gain 1/2 lbs per week",
+    text: "Gain 1/2 lb per week",
     explanation: "Calculated by adding 250 calories to your TDEE"
   },
   {
     option: 3,
-    text: "Gain 1 lbs per week",
+    text: "Gain 1 lb per week",
     explanation: "Calculated by adding 500 calories to your TDEE"
   },
   {
