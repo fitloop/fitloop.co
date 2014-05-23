@@ -88,11 +88,16 @@ goals = [
   },
   {
     option: 2,
+    text: "Gain 1/2 lbs per week",
+    explanation: "Calculated by adding 250 calories to your TDEE"
+  },
+  {
+    option: 3,
     text: "Gain 1 lbs per week",
     explanation: "Calculated by adding 500 calories to your TDEE"
   },
   {
-    option: 3,
+    option: 4,
     text: "Gain 2 lbs per week",
     explanation: "Calculated by adding 1000 calories to your TDEE"
   },
@@ -132,8 +137,11 @@ Deps.autorun(function() {
     calories = tdee;
   } else if (Session.get("goalRate") === "2")
   {
-    calories = tdee + 500;
+    calories = tdee + 250;
   } else if (Session.get("goalRate") === "3")
+  {
+    calories = tdee + 500;
+  } else if (Session.get("goalRate") === "4")
   {
     calories = tdee + 1000;
   }
