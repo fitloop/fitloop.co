@@ -11,3 +11,5 @@ spin
 font-awesome
 npm
 phantomjs
+accounts-password
+accounts-ui
