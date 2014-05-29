@@ -1,15 +1,6 @@
-// Template.timer.rendered = function() {
+Template.timer.rendered = function() {
 
-  function setButtonStart() {
-    $('.start-timer').html('<i class="fa fa-play">');
-  }
-
-  function setButtonPause() {
-    $('.start-timer').html('<i class="fa fa-pause">');
-  }
-  
-
-  // Timer
+    // Timer
   var timer = {
     time: 0,
     running : false,
@@ -80,11 +71,12 @@
 
   timer.init();
   timer.onFinish = function() {
+    playBeeps();
     setButtonStart();
           // setTimeout(function () {
     timer.setTime(Session.get('timerMax'));
           // }, 3000);
-    playBeeps();
+    
   }
 
   timer.onTick = function(secondsRemaining) {
@@ -99,9 +91,7 @@
   timer.stop = function() {
     Session.set('timerRunning', false);
   }
-
-Template.timer.rendered = function() {
-
+  
   var audio = document.getElementById('audioSprite');
 
   var playTick = function() {
@@ -186,5 +176,13 @@ Template.timer.rendered = function() {
   function resetTimer() {
     timer.setTime(Session.get('timerMax'));
     Session.set('timerTime', Session.get('timerMax'));
+  }
+
+  function setButtonStart() {
+    $('.start-timer').html('<i class="fa fa-play">');
+  }
+
+  function setButtonPause() {
+    $('.start-timer').html('<i class="fa fa-pause">');
   }
 }

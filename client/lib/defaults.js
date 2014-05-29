@@ -1,4 +1,4 @@
-Session.setDefault("stressLevel", 1.375);
+Session.setDefault("stressLevel", 1.38);
 Session.setDefault("age", 25);
 Session.setDefault("weightLbs", 155);
 Session.setDefault("heightFeet", 5);

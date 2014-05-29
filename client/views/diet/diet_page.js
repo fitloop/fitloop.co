@@ -57,6 +57,9 @@ Template.dietPage.helpers({
   tdee: function() {
     return Session.get("tdee");
   },
+  bmr: function() {
+    return Session.get("bmr");
+  },
   calories : function() {
     return Session.get("calories");
   },
@@ -116,15 +119,20 @@ Deps.autorun(function() {
   var age = Session.get("age");
   var stressLevel = Session.get("stressLevel");
 
-  var tdee = null;
+  var tdee, bmr = null;
 
   var baseMifflin = (10 * metricWeight ) + ( 6.25 * metricHeight ) - ( 5 * age );
 
   if(Session.get("gender") === "male")
+  {
+    bmr = Math.round(((baseMifflin + 5)) / 10) * 10;
     tdee = Math.round(((baseMifflin + 5) * stressLevel) / 10) * 10;
+  }
   else if(Session.get("gender") === "female")
+  {
+    bmr = Math.round(((baseMifflin - 161)) / 10) * 10;
     tdee = Math.round(((baseMifflin - 161) * stressLevel) / 10) * 10;
-
+  }
 
   var calories = tdee;
   
@@ -146,8 +154,14 @@ Deps.autorun(function() {
     calories = tdee + 1000;
   }
 
+  if(calories < bmr)
+    calories = bmr;
+  if(calories < 1200)
+    calories = 1200;
+
   Session.set("calories", calories);
   Session.set("tdee", tdee);
+  Session.set("bmr", bmr);
 });
 
 Template.dietPage.rendered = function() {

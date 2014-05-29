@@ -306,3 +306,24 @@ a.plate:hover {
     color: #464646;
   }
 }
+
+#feedback-link {
+  text-align: center;
+}
+
+
+/* Custom pages */
+#terms-page {
+    
+  padding-top: 5px;
+  padding-bottom: 10px;
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  ol {
+    padding: 0;
+  }
+
+}
