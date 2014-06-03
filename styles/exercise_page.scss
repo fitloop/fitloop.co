@@ -1,6 +1,42 @@
+#exercisesPage {
+  background: #f5f5f5;
+
+  h1 {
+    color: #2c2c2c;
+    margin-left: 12px;
+  }
+
+  .view-control {
+    position: absolute;
+    right: 34px;
+    top: 50px;
+  }
+}
+
 #exercisePage {
   max-width: 670px;
   margin: 0 auto;
+}
+
+.grid-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// @media(min-width: 645px)
+// {
+//   .grid-container {
+//     max-width: 645px;
+//     text-align: left;
+//   }
+// }
+
+@media(min-width: 1035px)
+{
+  .grid-container {
+    text-align: left;
+  }
 }
 
 .exercise-grid-item {
@@ -11,8 +47,9 @@
   color: #525252;
   width: 100%;
   // max-width: 400px;
-  margin: 0 10px 20px 0;
+  margin: 0 12px 60px 12px;
   height: 168px;
+  width: 300px;
   text-align: left;
 
 
@@ -23,28 +60,59 @@
 
   .text {
     position: absolute;
-    top: 0;
+    top: 168px;
     left: 0;
     z-index: 100;
-    background: rgba(0,0,0,.7);
+    background: #fff;
     width: 100%;
-    color: #fff;
-    padding: 7px;
-    // font-weight: 500;
+    color: #000;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
   }
 
 }
 
 .exercise-grid-item:hover {
-  .text {
-    background: #000;
-  }
+
 }
+
+/* Exercise List */
+.list-container {
+  padding: 0 12px;
+}
+
+.exercise-list-item {
+  padding: 10px;
+  display: block;
+  background: #fff;
+  color: #4e5953;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.exercise-list-item:nth-child(2n) {
+  background: #dff1e8;
+}
+
+.exercise-list-item:hover {
+  color: #000;
+}
+
 
 .center {
   text-align: center;
 }
 
-.exercise-grid-item {
-    width: 300px;
-}
+
+
+
+
+
+
+
+
+
+
+
+

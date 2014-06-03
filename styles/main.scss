@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
 
 body {
   font-family: "Roboto", Helvetica, Arial sans-serif;
@@ -23,6 +23,10 @@ pre {
 #page {
   padding-top: 5px;
   padding-bottom: 10px;
+
+  h1 {
+    font-weight: 300;
+  }
 }
 
 a {

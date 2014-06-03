@@ -1,15 +1,56 @@
-<template name="exercisesPage"> 
-  <div class="container" id="page">
-    <h3>Exercises</h3>
-    {{> exercisesGrid exercises}}
+<template name="exercisesPage">
+  <div id="exercisesPage">
+    <div class="container" id="page">
+      <h1>Exercises</h1>
+      
+      <div class="view-control">
+        View: 
+        
+        {{#if showListView}}
+          List
+        {{else}}
+          <a class='showListView' href="#">List</a>
+        {{/if}}
+        
+         | 
+
+        {{#if showGridView}}
+          Grid
+        {{else}}
+          <a class='showGridView' href="#">Grid</a>
+        {{/if}}
+        
+
+      </div>
+      
+      {{#if showGridView}}
+        {{> exercisesGrid exercises}}
+      {{else}}
+        {{> exercisesList exercises}}
+      {{/if}}
+
+      
+    </div>
   </div>
+  
 </template>
 
 <template name="exercisesGrid">
-  <div class="center">
+  <div class="grid-container">
   {{#each this}}
     <a class="exercise-grid-item" href="/exercises/{{slug}}">
       <img src="//img.youtube.com/vi/{{videoId}}/mqdefault.jpg">
+      <span class="text">{{name}}</span>
+    </a>
+  {{/each}}
+  </div>
+</template>
+
+
+<template name="exercisesList">
+  <div class="list-container">
+  {{#each this}}
+    <a class="exercise-list-item" href="/exercises/{{slug}}">
       <span class="text">{{name}}</span>
     </a>
   {{/each}}
