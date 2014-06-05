@@ -12,3 +12,10 @@ Template.navigationBar.rendered = function() {
     label: '<i class="fa fa-bars"></i>'
   });
 }
+
+Template.navigationBar.events({
+	'click #logout-link': function(e,t) {
+		e.preventDefault();
+		Meteor.logout();
+	}
+})

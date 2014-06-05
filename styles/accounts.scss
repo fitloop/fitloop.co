@@ -1,0 +1,34 @@
+#login-page, #signup-page {
+
+	height: 400px;
+
+	#account-form-box {
+		margin: 0 auto;
+		width: 300px;
+
+		position: relative;
+		top: 50px;
+
+		.error-box {
+			margin-bottom: 20px;
+			background: #e8b9b9;
+			color: #8e2a2c;
+			padding: 10px;
+		}
+
+		input {
+			display: block;
+			border: 2px solid #ddd;
+			padding: 10px;
+			margin: 0 auto 10px auto;
+			font-size: 16px;
+			width: 300px;
+		}
+
+		input[type="submit"] {
+			background: #65a56c;
+			color: #fff;
+			border: none;
+		}
+	}
+}

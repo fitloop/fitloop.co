@@ -1,0 +1,27 @@
+<template name="loginPage">
+	
+	<div id="login-page">
+		
+    <div id="account-form-box">
+
+      <h1>Log in</h1>
+      
+      {{#if error}}
+      <div class="error-box">
+        {{error}}
+      </div>
+      {{/if}}
+
+      <form id="login-form" action="action">
+        <div>
+          <input type="text" id="login-email" placeholder="username or email" />
+          <input type="password" id="login-password" placeholder="password" />
+          <input type="submit" id="login-button" value="Log in" />
+       </div>
+     </form> 
+    </div>
+
+
+	</div>
+
+</template>

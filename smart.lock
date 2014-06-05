@@ -8,7 +8,8 @@
       "spin": {},
       "font-awesome": {},
       "npm": {},
-      "phantomjs": {}
+      "phantomjs": {},
+      "fast-render": {}
     },
     "packages": {
       "iron-router": {
@@ -23,8 +24,8 @@
       },
       "GAnalytics": {
         "git": "https://github.com/datariot/meteor-ganalytics.git",
-        "tag": "v0.1.1",
-        "commit": "91b19d37687bb2cd7976fb43b482143a53509d7e"
+        "tag": "v0.2.0",
+        "commit": "2d5e48d5cc4c2f88edd40c0b2341d378bd4a702b"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
@@ -33,8 +34,8 @@
       },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
-        "tag": "v4.0.3",
-        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
       },
       "npm": {
         "git": "https://github.com/arunoda/meteor-npm.git",
@@ -45,6 +46,11 @@
         "git": "https://github.com/gadicohen/meteor-phantomjs.git",
         "tag": "v0.0.2",
         "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.2.5",
+        "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

@@ -97,7 +97,7 @@ Template.timer.rendered = function() {
   var playTick = function() {
     audio.play();
     int = setInterval(function() {
-        if (audio.currentTime > 2.5) {
+        if (audio.currentTime > 2) {
             audio.pause();
             audio.currentTime = 0;
             clearInterval(int);

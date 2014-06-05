@@ -12,4 +12,5 @@ font-awesome
 npm
 phantomjs
 accounts-password
-accounts-ui
+fast-render
+accounts-base

@@ -1,0 +1,24 @@
+<template name="signupPage">
+	
+	<div id="signup-page">
+	
+		<div id="account-form-box">
+			
+			<h1>Sign up</h1>
+      
+      {{#if error}}
+      <div class="error-box">
+        {{error}}
+      </div>
+      {{/if}}
+
+			<form action="action" id="signup-form">
+				<input type="username" id="account-username" placeholder="username">
+				<input type="email" id="account-email" placeholder="email">
+				<input type="password" id="account-password" placeholder="password">
+				<input type="submit" id="create-account" value="Sign Up">
+			</form>
+		</div>
+
+	</div>
+</template>

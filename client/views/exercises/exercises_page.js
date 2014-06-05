@@ -16,3 +16,7 @@ Template.exercisesPage.events({
 	},
 
 })
+
+Template.exercisesPage.rendered = function() {
+  document.title = "Exercises - Fitloop"; 
+}

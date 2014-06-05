@@ -13,10 +13,18 @@
           <li><a href="{{pathFor 'aboutPage'}}">about</a></li>
         </ul>
 
-        <!-- <ul class="right-nav">
-          <li><a href="#">log in</a></li>
-          <li><a href="#">sign up</a></li>
-        </ul> -->
+        <ul class="right-nav">
+          
+          {{#if currentUser}}
+            <li><a href="{{pathFor 'dashboard'}}">dashboard</a></li>
+            <li><a id="logout-link" href="#">log out</a></li>
+          {{else}}
+            <li><a href="{{pathFor 'loginPage'}}">log in</a></li>
+            <li><a href="{{pathFor 'signupPage'}}">sign up</a></li>
+          {{/if}}
+
+          
+        </ul>
       </nav>
     </div>
     

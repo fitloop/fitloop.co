@@ -1,0 +1,41 @@
+#dashboard-page {
+
+	min-height: 600px;
+
+
+	#sidebar {
+		// background: #f3f3f3;
+		border-right: 2px solid #e5e5e5;
+		width: 200px;
+		padding: 20px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+
+
+		h1 {
+			font-size: 14px;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			color: #aaa;
+		}
+
+		ul > li {
+			font-size: 18px;
+			margin-bottom: 15px;
+			font-weight: 400;
+
+			a {
+				color: #818281;
+			}
+
+			a:hover {
+				color: #111;
+			}
+			
+		}
+	}
+
+}

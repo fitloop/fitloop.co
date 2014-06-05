@@ -1,11 +1,27 @@
 <template name="dashboard">
-  <h3>Dashboard</h3>
-  <hr>
+  
+  <div id="dashboard-page" class="container page">
+    
+    <div id="sidebar">
+      <h1>Dashboard (beta)</h1>
 
-  <h4>Track Personal Metrics</h4>
+      <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Tracker</a></li>
+        <li><a href="#">My Stats</a></li>
+        <li><a href="#">Food Diary</a></li>
+        <li><a href="#">Progress Pics</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+
+  <!-- <h4>Track Personal Metrics</h4>
   <p>You can track any personal metric, such as weight or resting heart rate, with a tracker. Click the "New Tracker" button to track any metric changing over time. You can create as many trackers as you like.</p>
-
-  <p>
+ -->
+  <!-- <p>
     <button type="button" class="btn btn-primary new-tracker" data-toggle="modal" data-target="#addTrackerModal">+ New Tracker</button>
   </p>
   
@@ -14,7 +30,7 @@
     {{> tracker}}
   {{/each}}
 
-  {{> addTrackerModal}}
+  {{> addTrackerModal}} -->
 </template>
 
 <template name="tracker">
