@@ -7,18 +7,17 @@ Template.loginPage.events({
 				password = t.find('#login-password').value;
 
 		// TODO: Trim and validate fields
+		if(!email) {
+			Session.set("flashMessage", "Please fill in a username or email");
+			return false;
+		}
 
 		// If it passes
 		Meteor.loginWithPassword(email, password, function(err){
 			if(err)
 			{
 				// TODO: Tell user invalid email or pass
-				if(t.data)
-					t.data.error = err.reason;
-				else
-					t.data = { error : err.reason };
-				
-				console.log(t);
+				Session.set("flashMessage", err.reason);
 			}	
 			else
 			{
@@ -31,3 +30,9 @@ Template.loginPage.events({
 	}
 
 });
+
+Template.loginPage.helpers({
+	error: function() {
+		return Session.get("flashMessage");
+	}
+})

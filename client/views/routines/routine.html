@@ -2,12 +2,22 @@
   
   <div class="routine">
     <h2>{{name}}</h2>
-  
+
     <div class="description">
       <pre>{{description}}</pre>
       <br/>
       Source: <a href="{{source}}" target="_blank">{{source}}</a>
     </div>
+
+    {{#if currentUser}}
+      {{#if isLogged}}
+        <a href="#" class="button" id="undo-track-workout">Good work! Today's workout logged. (Undo)</a>
+      {{else}}
+        <a href="#" class="button" id="track-workout">Log today's workout</a>
+      {{/if}}
+    {{else}}
+      <a href="#" class="button" id="new-user-track-workout">Finished today's workout? Click here!</a>
+    {{/if}}
 
     <div class="alert alert-warning">
       <b>If something hurts, stop!</b>

@@ -44,6 +44,23 @@
     box-shadow: 0px 1px 6px #D7DDE0;
   }
 
+  .button {
+    display: block;
+    text-align: center;
+    background: #15365c;
+    padding: 10px;
+    // border: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.3em;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 6px #D7DDE0;
+    color: #fff;
+
+    &:hover {
+      background: #2b4b79;
+    }
+  }
+
   .notes {
     display: block;
     text-align: center;

@@ -17,6 +17,20 @@ Meteor.publish('equipment', function() {
   return Equipment.find();
 });
 
-Meteor.publish('trackers', function() {
-  return Trackers.find({userId: this.userId});
+Meteor.publish('workout_tracker', function(date, routineId) {
+	if(date && routineId)
+	{
+		var start = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+		var end = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+		return WorkoutTracker.find({
+			userId	: this.userId,
+			routineId: routineId,
+			day			: {$gt: start, $lt: end}
+		})
+	}
+	else
+	{
+		return WorkoutTracker.find({userId: this.userId});	
+	}
+	
 });

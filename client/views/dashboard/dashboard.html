@@ -1,18 +1,27 @@
 <template name="dashboard">
   
-  <div id="dashboard-page" class="container page">
+  <div id="dashboard-page">
     
-    <div id="sidebar">
-      <h1>Dashboard (beta)</h1>
+    <div class="container">
+      <!-- Upcoming Features:
+        - Better Tracker
+        - My Stats, Fitbit integration
+        - Food Diary
+        -Progress Pics
+      -->
 
-      <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Tracker</a></li>
-        <li><a href="#">My Stats</a></li>
-        <li><a href="#">Food Diary</a></li>
-        <li><a href="#">Progress Pics</a></li>
-      </ul>
+      <section id="profile">
+        <span id="username">{{currentUser.username}}</span>
+      </section>
+
+      <section id="dailyTracker">
+        <h2>Workout Log</h2>
+
+        {{> workoutTracker}}
+        
+      </section>
     </div>
+    
 
   </div>
 
