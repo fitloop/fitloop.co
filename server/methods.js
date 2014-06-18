@@ -7,7 +7,7 @@ Meteor.methods({
 		}
 
 		if(!email) {
-			Session.set("flashMessage", "Please fill in your email");
+			throw new Meteor.Error(403, "Please fill in a email");
 			return false;
 		}
 

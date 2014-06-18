@@ -9,8 +9,7 @@
       "font-awesome": {},
       "npm": {},
       "fast-render": {},
-      "moment": {},
-      "phantomjs": {}
+      "moment": {}
     },
     "packages": {
       "iron-router": {
@@ -52,11 +51,6 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
-      },
-      "phantomjs": {
-        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
-        "tag": "v0.0.2",
-        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

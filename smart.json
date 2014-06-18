@@ -7,7 +7,6 @@
     "font-awesome": {},
     "npm": {},
     "fast-render": {},
-    "moment": {},
-    "phantomjs": {}
+    "moment": {}
   }
 }
