@@ -16,7 +16,7 @@
         <a href="#" class="button" id="track-workout"><i class="fa fa-pencil"></i> Log today's workout</a>
       {{/if}}
     {{else}}
-      <a href="#" class="button" id="new-user-track-workout">Finished today's workout? Click here!</a>
+      <a href="{{pathFor 'loginPage'}}" class="button" id="new-user-track-workout"><i class="fa fa-pencil"></i> Log today's workout</a>
     {{/if}}
 
     <div class="alert alert-warning">

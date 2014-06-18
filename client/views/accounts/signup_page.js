@@ -5,12 +5,18 @@ Template.signupPage.events({
 
 		//retrieve input field values
 		var username = t.find('#account-username').value,
+				email = t.find('#account-email').value,
 				password = t.find('#account-password').value;
 
-		// email = trimInput(email);
+		email = StringUtilities.trimInput(email);
 
 		if(!username) {
 			Session.set("flashMessage", "Please fill in a username");
+			return false;
+		}
+
+		if(!email) {
+			Session.set("flashMessage", "Please fill in your email");
 			return false;
 		}
 
@@ -19,7 +25,7 @@ Template.signupPage.events({
 			return false;
 		}
 
-    Meteor.call('createAccount', username, password, function(error, result) {
+    Meteor.call('createAccount', username, email, password, function(error, result) {
     	if(error)
     	{
     		Session.set("flashMessage", error.reason);

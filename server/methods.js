@@ -1,8 +1,13 @@
 Meteor.methods({
-	'createAccount' : function(username, password) {
+	'createAccount' : function(username, email, password) {
 
 		if(!username) {
 			throw new Meteor.Error(403, "Please fill in a username");
+			return false;
+		}
+
+		if(!email) {
+			Session.set("flashMessage", "Please fill in your email");
 			return false;
 		}
 
@@ -18,7 +23,7 @@ Meteor.methods({
 		username = username.toLowerCase();
 		username = StringUtilities.removeWhitespace(username);
 
-		Accounts.createUser({username: username, password : password, profile: profile});
+		Accounts.createUser({username: username, email: email, password : password, profile: profile});
 
 		return username;
 
