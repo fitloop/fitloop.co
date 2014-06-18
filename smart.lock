@@ -8,9 +8,9 @@
       "spin": {},
       "font-awesome": {},
       "npm": {},
-      "phantomjs": {},
       "fast-render": {},
-      "moment": {}
+      "moment": {},
+      "phantomjs": {}
     },
     "packages": {
       "iron-router": {
@@ -43,11 +43,6 @@
         "tag": "v0.2.6",
         "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
       },
-      "phantomjs": {
-        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
-        "tag": "v0.0.2",
-        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
-      },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
         "tag": "v0.2.8",
@@ -57,6 +52,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.6.0",
         "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+      },
+      "phantomjs": {
+        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
+        "tag": "v0.0.2",
+        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

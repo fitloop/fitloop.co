@@ -6,8 +6,8 @@
     "spin": {},
     "font-awesome": {},
     "npm": {},
-    "phantomjs": {},
     "fast-render": {},
-    "moment": {}
+    "moment": {},
+    "phantomjs": {}
   }
 }

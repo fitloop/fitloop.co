@@ -9,15 +9,7 @@
       Source: <a href="{{source}}" target="_blank">{{source}}</a>
     </div>
 
-    {{#if currentUser}}
-      {{#if isLogged}}
-        <a href="#" class="button" id="undo-track-workout"><i class="fa fa-check"></i> Good work! Today's workout logged. (Undo)</a>
-      {{else}}
-        <a href="#" class="button" id="track-workout"><i class="fa fa-pencil"></i> Log today's workout</a>
-      {{/if}}
-    {{else}}
-      <a href="{{pathFor 'loginPage'}}" class="button" id="new-user-track-workout"><i class="fa fa-pencil"></i> Log today's workout</a>
-    {{/if}}
+    {{> logWorkout}}
 
     <div class="alert alert-warning">
       <b>If something hurts, stop!</b>
@@ -37,6 +29,9 @@
           {{/each}}
         </ul>
       </div>
-    {{/each}}  
+    {{/each}}
+
+    {{> logWorkout}}
+    
   </div>
 </template>

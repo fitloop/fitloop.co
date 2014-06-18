@@ -10,9 +10,9 @@ GAnalytics
 spin
 font-awesome
 npm
-phantomjs
 accounts-password
 fast-render
 accounts-base
 moment
+phantomjs
 spiderable
