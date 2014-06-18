@@ -16,7 +16,7 @@
         <ul class="right-nav">
           
           {{#if currentUser}}
-            <li><a href="{{pathFor 'dashboard'}}">{{currentUser.username}}</a></li>
+            <li><a href="{{pathFor 'dashboard'}}">{{currentUser.profile.displayName}}</a></li>
             <li><a id="logout-link" href="#">log out</a></li>
           {{else}}
             <li><a href="{{pathFor 'loginPage'}}">log in</a></li>

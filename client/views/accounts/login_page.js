@@ -12,6 +12,10 @@ Template.loginPage.events({
 			return false;
 		}
 
+		// trim email
+		email = email.toLowerCase();
+		email = StringUtilities.removeWhitespace(email);
+
 		// If it passes
 		Meteor.loginWithPassword(email, password, function(err){
 			if(err)

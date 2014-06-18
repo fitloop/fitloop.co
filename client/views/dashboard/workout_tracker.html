@@ -2,7 +2,7 @@
 	
 	<ul id="recent-workouts">
 	{{#each workoutLog}}
-		<li><span class="date">{{readableDate}}</span> Completed {{routineName}}</li>
+		<li><span class="date">{{readableDate}}</span> Completed {{routineName}} <span class="date">({{timePassed}})</span></li>
 	{{/each}}
 
 	{{#if noWorkouts}}

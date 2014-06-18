@@ -24,11 +24,9 @@ Template.routine.events({
 	'click #undo-track-workout' : function(e,t) {
 		var workoutLog = WorkoutTracker.findOne({routineId: this._id});
 
-		
-
 		if(Meteor.user() && workoutLog)
 		{
-			Meteor.call('undoLogWorkout', workoutLog._id);
+			Meteor.call('undoLogWorkout', workoutLog._id, new Date());
 		}
 	}
 });

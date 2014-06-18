@@ -5,6 +5,10 @@
     <div id="account-form-box">
 
       <h1>Log in</h1>
+
+      <p>
+      Need an account? <a href="{{pathFor 'signupPage'}}">Sign up here</a>.
+      </p>
       
       {{#if error}}
       <div class="error-box">
@@ -14,7 +18,7 @@
 
       <form id="login-form" action="action">
         <div>
-          <input type="text" id="login-email" placeholder="username or email" />
+          <input type="text" id="login-email" placeholder="username" />
           <input type="password" id="login-password" placeholder="password" />
           <input type="submit" id="login-button" value="Log in" />
        </div>

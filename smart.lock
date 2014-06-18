@@ -9,7 +9,8 @@
       "font-awesome": {},
       "npm": {},
       "phantomjs": {},
-      "fast-render": {}
+      "fast-render": {},
+      "moment": {}
     },
     "packages": {
       "iron-router": {
@@ -19,8 +20,8 @@
       },
       "scss": {
         "git": "https://github.com/fourseven/meteor-scss.git",
-        "tag": "v0.8.7",
-        "commit": "d085b7272eacc20866abff61b25c915a22ddbcf4"
+        "tag": "v0.9.2",
+        "commit": "b6fcca86cdd4c41ada0abd5d6e3a7f77c919d826"
       },
       "GAnalytics": {
         "git": "https://github.com/datariot/meteor-ganalytics.git",
@@ -49,8 +50,13 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.5",
-        "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
+        "tag": "v0.2.8",
+        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

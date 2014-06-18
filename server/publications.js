@@ -17,11 +17,9 @@ Meteor.publish('equipment', function() {
   return Equipment.find();
 });
 
-Meteor.publish('workout_tracker', function(date, routineId) {
-	if(date && routineId)
+Meteor.publish('workout_tracker', function(routineId, start, end) {
+	if(routineId && start && end)
 	{
-		var start = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-		var end = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
 		return WorkoutTracker.find({
 			userId	: this.userId,
 			routineId: routineId,
