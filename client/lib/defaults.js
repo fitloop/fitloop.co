@@ -11,4 +11,4 @@ Session.setDefault('timerTime', 60);
 Session.setDefault('timerMax', 60);
 Session.setDefault('timerRunning', false);
 
-Session.setDefault('listOrGridView', 'list');
+Session.setDefault('listOrGridView', 'grid');

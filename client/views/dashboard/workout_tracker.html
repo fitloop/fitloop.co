@@ -1,13 +1,15 @@
 <template name="workoutTracker">
 	
-	<ul id="recent-workouts">
-	{{#each workoutLog}}
-		<li><span class="date">{{readableDate}}</span> Completed {{routineName}} <span class="date">({{timePassed}})</span></li>
-	{{/each}}
+	<div id="recent-workouts">
 
-	{{#if noWorkouts}}
-	  <li>This is where your logged workouts show up. Complete a routine and click the "Log today's workout" button on the routine page. You must log the workout on the day you complete the routine.</li>
-	{{/if}}
-	</ul>
+		{{#each workoutLogEntry}}
+			{{> workoutLog}}
+		{{/each}}
+
+		{{#if noWorkouts}}
+		  <p>This is where your logged workouts show up. Complete a routine and click the "Log today's workout" button on the routine page. You must log the workout on the day you complete the routine.</p>
+		{{/if}}
+
+	</div>
 
 </template>

@@ -1,5 +1,5 @@
 #dashboard-page {
-
+	background: #f5f5f5;
 	padding-top: 20px;
 
 	section {
@@ -11,22 +11,23 @@
 	}
 
 	section#profile {
-		background: #fff;
+		// background: #fff;
 		
 		#username {
 			font-size: 30px;
-			color: #2f9cb8;
+			color: #3498db;
 			font-weight: 500;
 		}
 	}
 
 	section#dailyTracker {
-		background: #fff;
+		// background: #fff;
 
 		h2 {
 			color: #5d5d5d;
-			font-weight: 500;
+			font-weight: 300;
 			line-height: 50px;
+			font-size: 22px;
 		}
 	}
 

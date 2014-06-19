@@ -1,10 +1,10 @@
 Template.workoutTracker.helpers({
 
-	workoutLog: function() {
+	workoutLogEntry: function() {
 		return WorkoutTracker.find({},
 			{
-			  sort: {day: -1},
-			  limit: 50
+			  sort: {day: 1},
+			  limit: 5
 			});
 	},
 
@@ -12,15 +12,4 @@ Template.workoutTracker.helpers({
 	'noWorkouts' : function() {
 		return WorkoutTracker.find({}).count() === 0 ? true : false;
 	},
-
-	readableDate: function() {
-		var mday = moment(this.day);
-		return mday.format("ddd MMM Do , ha");
-	},
-
-	timePassed: function() {
-		var mday = moment(this.day);
-		return mday.from(new Date());
-	}
-
 });

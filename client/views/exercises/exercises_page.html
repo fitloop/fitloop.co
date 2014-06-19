@@ -1,34 +1,55 @@
 <template name="exercisesPage">
   <div id="exercisesPage">
     <div class="container" id="page">
-      <h1>Exercises</h1>
-      
-      <div class="view-control">
-        View: 
-        
-        {{#if showListView}}
-          List
-        {{else}}
-          <a class='showListView' href="#">List</a>
-        {{/if}}
-        
-         | 
+      <h1>Workouts</h1>
 
-        {{#if showGridView}}
-          Grid
-        {{else}}
-          <a class='showGridView' href="#">Grid</a>
-        {{/if}}
-        
-
+      <!-- Bodyweight Fitness Routines -->
+      <div class="select-routine row clearfix">
+        <div class="column half">
+          <a class="plate" href="/routines/bwf-beginner-routine">
+              <!-- <i class="fa fa-anchor"></i> -->
+              <span class="text">Zero or limited experience? Start here.</span>
+              <span class="description">Simple Beginner Routine</span>
+          </a>
+        </div>
+        <div class="column half">
+          <a class="plate" href="/routines/bwf-intermediate-beginner-routine">
+              <!-- <i class="fa fa-anchor"></i> -->
+              <span class="text">3 to 9 months experience? Start here.</span>
+              <span class="description">Intermediate Beginner Routine</span>
+          </a>
+        </div>
       </div>
-      
-      {{#if showGridView}}
-        {{> exercisesGrid exercises}}
-      {{else}}
-        {{> exercisesList exercises}}
-      {{/if}}
 
+      <div class="exercise-library">
+        <h1>Exercises</h1>
+      
+        <div class="view-control">
+          View: 
+          
+          {{#if showListView}}
+            List
+          {{else}}
+            <a class='showListView' href="#">List</a>
+          {{/if}}
+          
+           | 
+
+          {{#if showGridView}}
+            Grid
+          {{else}}
+            <a class='showGridView' href="#">Grid</a>
+          {{/if}}
+          
+
+        </div>
+        
+        {{#if showGridView}}
+          {{> exercisesGrid exercises}}
+        {{else}}
+          {{> exercisesList exercises}}
+        {{/if}}
+      </div>
       
     </div>
   </div>
