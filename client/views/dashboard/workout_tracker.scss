@@ -1,13 +1,30 @@
 #recent-workouts {
 
+	.workout-log-lines {
+		.title {
+			color: #aeaeae;
+			display: inline-block;
+		}
+
+		.content,.routineName,.timeAgo {
+			display: inline-block;
+		}
+
+		.routineName {
+			font-size: 16px;
+			font-weight: 400;
+		}
+	}
+
 	.workout-log {
-		display: inline-block;
+	  display: inline-block;
 		background: #fff;
-		width: 200px;
-		min-height: 300px;
+		width: 230px;
+		min-height: 100px;
 		margin-right: 10px;
 		box-shadow: 0px 2px 2px #ccc;
 		position: relative;
+		margin-bottom: 20px;
 		
 		.title {
 			position: relative;

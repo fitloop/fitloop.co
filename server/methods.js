@@ -41,7 +41,7 @@ Meteor.methods({
 				day : {$gt: start} 
 			}).count();
 
-		console.log(recentWorkoutCount);
+		// console.log(recentWorkoutCount);
 
 		if(recentWorkoutCount === 0)
 		{

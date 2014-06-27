@@ -1,14 +1,15 @@
 <template name="workoutLog">
-	<div class="workout-log">
+	<div class="workout-log-lines">
+		
 		<div class="title">
 			{{readableDate}}
-			<a href="#" class="editLink"><i class="fa fa-pencil"></i></a>
+			<!-- <a href="#" class="editLink"><i class="fa fa-pencil"></i></a> -->
 		</div>
 		
 		<div class="content">
-			<div class="routineName">{{routineName}}</div>
+			<div class="routineName">Completed {{routineName}}</div>
 			
-			<div class="timeAgo">{{timePassed}}</div>
+			<div class="timeAgo">({{timePassed}})</div>
 			
 			<div class="notes">
 				{{notes}}
@@ -18,7 +19,7 @@
 		
 	</div>
 
-	{{#if editing}}
+	<!-- {{#if editing}}
 		{{> editWorkoutLog}}
-	{{/if}}
+	{{/if}} -->
 </template>

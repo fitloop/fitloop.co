@@ -3,7 +3,7 @@ Template.workoutTracker.helpers({
 	workoutLogEntry: function() {
 		return WorkoutTracker.find({},
 			{
-			  sort: {day: 1},
+			  sort: {day: -1},
 			  limit: 5
 			});
 	},

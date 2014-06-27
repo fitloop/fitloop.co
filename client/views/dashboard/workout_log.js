@@ -2,7 +2,8 @@ Template.workoutLog.helpers({
 
 	readableDate: function() {
 		var mday = moment(this.day);
-		return mday.format("ddd MMM Do, h:mm a");
+		// return mday.format("ddd MMM Do, h:mm a");
+		return mday.format("ddd MMM Do, ha");
 	},
 
 	timePassed: function() {
