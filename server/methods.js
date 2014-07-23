@@ -58,17 +58,22 @@ Meteor.methods({
 	'undoLogWorkout' : function(workoutLogId, date) {
 		
 		var workoutLog = WorkoutTracker.findOne({ _id : workoutLogId });
-		
-		var start = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-		var end = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
 
-		if(this.userId && workoutLog.userId === this.userId)
+		if(workoutLog)
 		{
-			WorkoutTracker.remove({
-				_id : workoutLog._id,
-				userId: this.userId,
-				day : {$gt: start, $lt: end}
-			});
+			var start = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+			var end = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+
+			if(this.userId && workoutLog.userId === this.userId)
+			{
+				WorkoutTracker.remove({
+					_id : workoutLog._id,
+					userId: this.userId,
+					day : {$gt: start, $lt: end}
+				});
+			}
 		}
+		
+		
 	}
 });
