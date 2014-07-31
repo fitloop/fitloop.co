@@ -8,3 +8,6 @@
 /phantomjs
 /fast-render
 /moment
+/iron-layout
+/iron-core
+/iron-dynamic-template
