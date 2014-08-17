@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
-  font-family: "Roboto", Helvetica, Arial sans-serif;
+  font-family: "Open Sans", Helvetica, Arial sans-serif;
   color: #383838;
 }
 
@@ -17,12 +18,12 @@ pre {
 
 #wrap {
   margin-top: 80px;
-  margin-bottom: 40px;
+  height: 100%;
 }
 
 #page {
   padding-top: 5px;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 
   h1 {
     font-weight: 300;
@@ -154,10 +155,11 @@ ul, li {
   /*color: black;*/
   height: 12em;
   text-align: center;
-  border: 2px dashed #d5d5d5;
+  // border: 2px dashed #d5d5d5;
+  border-radius: 7px;
+  background: #fff;
 
   &:hover {
-    background: rgba(255,255,255,0.3);
   }
 }
 
@@ -194,20 +196,31 @@ a.plate:hover {
 
 /* Set the fixed height of the footer here */
 #footer {
+  background: #F3F8F6;
+  padding-bottom: 40px;
+  color: #b2c8b5;
+  a {
+    color: #c4c9c7;
+    &:hover {
+      color: #a8c1aa;
+    }
+  }
+}
+
+#footer-links {
+  
   text-align: center;
   padding: 10px;
-  color: #464646;
   bottom: 0;
   left: 0;
   right: 0;
   font-size: 14px;
-  a {
-    color: #464646;
-  }
+  
 }
 
 #feedback-link {
   text-align: center;
+  font-size: 14px;
 }
 
 

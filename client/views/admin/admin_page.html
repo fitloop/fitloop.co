@@ -1,5 +1,37 @@
 <template name="adminPage">
 	
-	Admin Page!
+  <div class="container" id="admin-page">
+
+    <h1>Admin</h1>
+
+    <h2>Add Exercise</h2>
+
+    <form>
+      <label>Name</label>
+      <input type="text" id="exercise-name">
+
+      <label>Slug</label>
+      <input type="text" id="exercise-slug">
+      
+      <label>VideoId</label>
+      <input type="text" id="exercise-videoid">
+      
+      <label>Notes</label>
+      <textarea id="exercise-notes"></textarea>
+
+      <input type="submit" value="Save" id="save_exercise">
+    </form>
+    
+    <h2>All Exercises</h2>
+    <ul>
+    {{#each exercises}}
+      <li>{{name}}</li>
+    {{/each}}  
+    </ul>
+    
+
+
+  </div>
+	
 
 </template>

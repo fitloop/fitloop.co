@@ -2,9 +2,12 @@
     {{> navigationBar}}
     <div id="wrap">
       {{> yield}}
-      {{> footer}}
+
+      <div id="footer">
+        {{> footer}}
+        {{> feedback}}
+      </div>
       
-      {{> feedback}}
 
     </div>
 
