@@ -81,17 +81,26 @@
 }
 
 @media (max-width: 640px) {
-  .home-page {
-    height: 110px;
-    h2 {
-      padding-top: 20px;
-      font-size: 1.5em;
-    }
+  #home-page{
+    #hero {
 
-    ol {
-      font-size: 1.5em;
-    }
+      height: 380px;
 
+      h2 {
+      }
+
+      .subtitle {
+      }
+
+      #routine-image {
+        background-image: url("//s3.amazonaws.com/fitloop/routine-image.png");
+        width: 350px;
+        height: 162px;
+        background-size: 350px 162px;
+        margin: 0 auto;
+        margin-top: 40px;
+      }
+    }
   }
 }
 
