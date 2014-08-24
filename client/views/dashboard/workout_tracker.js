@@ -4,7 +4,6 @@ Template.workoutTracker.helpers({
 		return WorkoutTracker.find({},
 			{
 			  sort: {day: -1},
-			  limit: 5
 			});
 	},
 
