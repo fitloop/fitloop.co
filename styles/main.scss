@@ -3,6 +3,8 @@
 body {
   font-family: "Open Sans", Helvetica, Arial sans-serif;
   color: #383838;
+  height: 100%;
+  background: #F3F8F6;
 }
 
 pre {
@@ -18,11 +20,14 @@ pre {
 #wrap {
   margin-top: 80px;
   height: 100%;
+
 }
 
 #page {
   padding-top: 5px;
-  // padding-bottom: 10px;
+  padding-bottom: 10px;
+
+  background: #fff;
 
   h1 {
     font-weight: 300;

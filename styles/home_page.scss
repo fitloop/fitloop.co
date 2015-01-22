@@ -2,10 +2,10 @@
   #hero {
     z-index: -100;
     width: 100%;
-    height: 440px;
+    height: 200px;
     position: relative;
     color: #fff;
-    background: #60C082;
+    background: #F3F8F6;
 
     h2 {
       display: block;
@@ -14,7 +14,7 @@
       font-family: 'Open Sans', sans-serif;
 
       font-size: 24px;
-      color: #FFFFFF;
+      color: #339c6a;
       line-height: 33px;
       /* Learn practical, eff: */
     }
@@ -24,19 +24,19 @@
       text-align: center;
 
       font-size: 18px;
-      color: #D6EDE9;
+      color: #759f8e;
       line-height: 24px;
       /* Pick a workout track: */
     }
 
-    #routine-image {
-      background-image: url("//s3.amazonaws.com/fitloop/routine-image.png");
-      width: 499px;
-      height: 231px;
-      background-size: 499px 231px;
-      margin: 0 auto;
-      margin-top: 73px;
-    }
+    // #routine-image {
+    //   background-image: url("//s3.amazonaws.com/fitloop/routine-image.png");
+    //   width: 499px;
+    //   height: 231px;
+    //   background-size: 499px 231px;
+    //   margin: 0 auto;
+    //   margin-top: 73px;
+    // }
   }
 
 
@@ -45,7 +45,7 @@
   
 
 #exercise-selection {
-  padding-top: 50px;
+  // padding-top: 50px;
 
   background: #F3F8F6;
 
@@ -68,12 +68,15 @@
   #home-page{
     #hero {
 
-      height: 380px;
+      height: 200px;
 
       h2 {
+        padding-top: 30px;
+        text-align: left;
       }
 
       .subtitle {
+        text-align: left;
       }
 
       #routine-image {

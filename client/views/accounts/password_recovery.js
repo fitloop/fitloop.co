@@ -1,4 +1,4 @@
-Template.passwordRecovery.helpers({
+Template.recoverPassword.helpers({
   resetPassword : function(t) {
     return Session.get('resetPassword');
   },
@@ -7,7 +7,7 @@ Template.passwordRecovery.helpers({
 	}
 });
 
-Template.passwordRecovery.events({
+Template.recoverPassword.events({
 
   'submit #recovery-form' : function(e, t) {
     e.preventDefault()
@@ -48,6 +48,6 @@ Template.passwordRecovery.events({
         Session.set('loading', false);
       });
     }
-  return false; 
+  return false;
   }
 });
