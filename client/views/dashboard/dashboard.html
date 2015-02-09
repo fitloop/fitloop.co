@@ -1,29 +1,43 @@
 <template name="dashboard">
-  
+
   <div id="dashboard-page">
-    
+
     <div class="container">
       <!-- Upcoming Features:
         - Better Tracker
         - My Stats, Fitbit integration
         - Food Diary
-        -Progress Pics
+        - Progress Pics
       -->
 
       <section id="profile">
         <span id="username">Welcome, {{currentUser.profile.displayName}}!</span>
       </section>
 
+      <section id="publicSetting">
+
+        {{#if currentUser.profile.public}}
+          <span>Your public profile link is <a href="https://fitloop.co/user/{{currentUser.username}}">https://fitloop.co/user/{{currentUser.username}}</a> (<a href="#" id="setToPrivate">Set to Private</a>) </span>
+        {{else}}
+          <span>New! Set your profile to public, and share your workout logs with friends.</span>
+          <a href="#" id="setToPublic">Set Profile to Public</a>
+        {{/if}}
+
+
+      </section>
+
+
+
       <section id="dailyTracker">
         {{> workoutTracker}}
-        
+
       </section>
     </div>
-    
+
 
   </div>
 
-  
+
 
   <!-- <h4>Track Personal Metrics</h4>
   <p>You can track any personal metric, such as weight or resting heart rate, with a tracker. Click the "New Tracker" button to track any metric changing over time. You can create as many trackers as you like.</p>
@@ -31,7 +45,7 @@
   <!-- <p>
     <button type="button" class="btn btn-primary new-tracker" data-toggle="modal" data-target="#addTrackerModal">+ New Tracker</button>
   </p>
-  
+
 
   {{#each trackers}}
     {{> tracker}}
@@ -45,7 +59,7 @@
     <div class="panel-heading">
       {{name}}
       <button type="button" class="btn pull-right btn-default btn-sm" data-toggle="modal" data-target="">X Delete</button>
-      <button type="button" class="btn pull-right btn-default btn-sm" data-toggle="modal" data-target="">Edit Data</button> 
+      <button type="button" class="btn pull-right btn-default btn-sm" data-toggle="modal" data-target="">Edit Data</button>
       <button type="button" class="btn pull-right btn-default btn-sm" data-toggle="modal" data-target="">+ Data Point</button>
     </div>
     <div class="panel-body">
@@ -65,7 +79,7 @@
       </div>
       <form role="form">
       <div class="modal-body">
-        
+
           <div class="form-group">
             <label for="trackerName">Tracker Name</label>
             <input name="trackerName" type="text" class="form-control" id="trackerName" placeholder="Enter tracker name">
@@ -74,7 +88,7 @@
             <label for="units">Unit of Measure</label>
             <input name="units" type="text" class="form-control" id="units" placeholder="lbs, kg, bpm, etc.">
           </div>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

@@ -11,4 +11,6 @@ Template.workoutTracker.helpers({
 	'noWorkouts' : function() {
 		return WorkoutTracker.find({}).count() === 0 ? true : false;
 	},
+
+	
 });

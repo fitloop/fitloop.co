@@ -1,6 +1,6 @@
 Template.recoverPassword.helpers({
   resetPassword : function(t) {
-    return Session.get('resetPassword');
+    return !!Session.get('resetPassword');
   },
   error: function() {
 		return Session.get("flashMessage");

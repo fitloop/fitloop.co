@@ -4,6 +4,15 @@ Template.dashboard.helpers({
   }
 });
 
+Template.dashboard.events({
+  'click a#setToPublic': function() {
+    Meteor.users.update(Meteor.userId(), {$set: { 'profile.public' : true}});
+  },
+  'click a#setToPrivate': function() {
+    Meteor.users.update(Meteor.userId(), {$set: { 'profile.public' : false}});
+  }
+})
+
 Template.tracker.rendered = function() {
   var options = {
     series: {
