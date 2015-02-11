@@ -7,6 +7,16 @@ Template.dietPage.helpers({
     if (Session.get("gender") === "female")
       return "checked";
   },
+
+  isMetric: function() {
+    if (Session.get("system") === "metric")
+      return "checked";
+  },
+  isImperial: function() {
+    if (Session.get("system") === "imperial")
+      return "checked";
+  },
+
   heightFeet: function() {
     return Session.get("heightFeet");
   },
@@ -25,34 +35,8 @@ Template.dietPage.helpers({
   age: function() {
     return Session.get("age");
   },
-
-  stressLevel : function() {
-    return Session.get("stressLevel");
-  },
-  stressLevelText : function() {
-    var sl = Session.get("stressLevel");
-
-    if(sl < 1.22)
-      return "No exercise";
-    else if(sl < 1.3)
-      return "Little exercise";
-    else if(sl < 1.4)
-      return "Mild exercise (jogging, biking, frequent walking)";
-    else if (sl < 1.4187)
-      return "3 times a week (intensive exercise for 30 to 60 minutes)";
-    else if (sl < 1.4625)
-      return "4 times a week (intensive exercise for 30 to 60 minutes)";
-    else if (sl < 1.5063)
-      return "5 times a week (intensive exercise for 30 to 60 minutes)";
-    else if (sl < 1.55)
-      return "6 times a week (intensive exercise for 30 to 60 minutes)";
-    // return "No Exercise";
-    else if (sl < 1.7)
-      return "Everyday (intensive exercise for 30 to 60 minutes)";
-    else if (sl < 1.9)
-      return "Heavy or (Labor-intensive) activity level";
-    else if (sl = 1.9)
-      return "Extreme level";
+  exerciseLevel : function() {
+    return Session.get("exerciseLevel");
   },
   tdee: function() {
     return Session.get("tdee");
@@ -76,7 +60,37 @@ Template.dietPage.helpers({
   explanation: function() {
     return goals[Session.get("goalRate")].explanation;
   },
+  exerciseLevels: function() {
+    return [
+      {
+        option: 1.20,
+        text: "Little to no exercise"
+      },
+      {
+        option: 1.375,
+        text: "Light exercise (1–3 days per week)"
+      },
+      {
+        option:  1.55,
+        text: "Moderate exercise (3–5 days per week)"
+      },
+      {
+        option:  1.725,
+        text: "Heavy exercise (6–7 days per week)"
+      },
+      {
+        option:  1.9,
+        text: "Very heavy exercise (twice per day, extra heavy workouts)"
+      },
+    ];
+  },
+  exerciseLevelSelected: function() {
+    if (Number(this.option) === Number(Session.get("exerciseLevel"))) {
+      return "selected";
+    }
+  }
 });
+
 
 goals = [
   {
@@ -117,7 +131,7 @@ Deps.autorun(function() {
   var metricWeight = imperialWeight*0.453592;
 
   var age = Session.get("age");
-  var stressLevel = Session.get("stressLevel");
+  var exerciseLevel = Session.get("exerciseLevel");
 
   var tdee, bmr = null;
 
@@ -126,16 +140,16 @@ Deps.autorun(function() {
   if(Session.get("gender") === "male")
   {
     bmr = Math.round(((baseMifflin + 5)) / 10) * 10;
-    tdee = Math.round(((baseMifflin + 5) * stressLevel) / 10) * 10;
+    tdee = Math.round(((baseMifflin + 5) * exerciseLevel) / 10) * 10;
   }
   else if(Session.get("gender") === "female")
   {
     bmr = Math.round(((baseMifflin - 161)) / 10) * 10;
-    tdee = Math.round(((baseMifflin - 161) * stressLevel) / 10) * 10;
+    tdee = Math.round(((baseMifflin - 161) * exerciseLevel) / 10) * 10;
   }
 
   var calories = tdee;
-  
+
   // lose weight
   if(Session.get("goalRate") === "0")
   {
@@ -172,9 +186,11 @@ Template.dietPage.rendered = function() {
 }
 
 Template.dietPage.events({
-  'mousemove #stress-level' : function () {
-    // console.log($('#stress-level').val());
-    Session.set("stressLevel", $('#stress-level').val());
+  'change #exercise-level' : function () {
+    Session.set("exerciseLevel", $('#exercise-level').val());
+  },
+  'change input[name="system"]' : function () {
+    Session.set("system", $('input[name="system"]:checked').val());
   },
   'change #age' : function () {
     Session.set("age", $('#age').val());
@@ -239,4 +255,3 @@ var updateImperialWeight = function() {
   imperialWeight = Math.round(imperialWeight);
   Session.set("weightLbs", imperialWeight );
 }
-

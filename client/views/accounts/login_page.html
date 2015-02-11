@@ -2,33 +2,31 @@
 
 	<div id="login-page" class="account-page">
 
-    <div id="account-form-box">
+		<div id="account-form-box">
 
-      <h1>Log in</h1>
+			<h1>Log in</h1>
 
-      <p>
-      Need an account? <a href="{{pathFor 'signupPage'}}">Sign up here</a>.
-      </p>
+			<p>
+				Need an account? <a href="{{pathFor 'signupPage'}}">Sign up here</a>.
+			</p>
 
-      {{#if error}}
-      <div class="error-box">
-        {{error}}
-      </div>
-      {{/if}}
+			{{#if error}}
+			<div class="alert alert-danger" role="alert">
+				{{error}}
+			</div>
+			{{/if}}
 
-      <form id="login-form" action="action">
-        <div>
-          <input type="text" id="login-email" placeholder="username or email" />
-          <input type="password" id="login-password" placeholder="password" />
-          <input type="submit" id="login-button" value="Log in" />
-       </div>
-     </form>
+			<form id="login-form" action="action">
+				<div class="form-group">
+					<input type="text" class="form-control" id="login-email" placeholder="username or email" />
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="login-password" placeholder="password" />
+				</div>
+				<input class="btn btn-success" type="submit" id="login-button" value="Log in" /> <a href="/reset-password">Forgot Password?</a>
+			</form>
 
-    <p><a href="/reset-password">Forgot Password? Reset it here.</a></p>
-
-    </div>
-
-
+		</div>
 	</div>
 
 </template>

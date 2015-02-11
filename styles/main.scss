@@ -26,17 +26,17 @@ pre {
 #page {
   padding-top: 5px;
   padding-bottom: 10px;
-
   background: #fff;
+  box-shadow: 0px 0px 5px #ddd;
 
-  h1 {
-    font-weight: 300;
-  }
+  // h1 {
+  //   font-weight: 300;
+  // }
 }
 
-a {
-  text-decoration: none;
-}
+// a {
+//   text-decoration: none;
+// }
 
 ul, li {
   list-style-type: none;
@@ -126,7 +126,7 @@ ul, li {
     right: 12px;
     font-size: 14px;
   }
-  
+
   .button {
     position: absolute;
     bottom: 10px;
@@ -212,14 +212,14 @@ a.plate:hover {
 }
 
 #footer-links {
-  
+
   text-align: center;
   padding: 10px;
   bottom: 0;
   left: 0;
   right: 0;
   font-size: 14px;
-  
+
 }
 
 #feedback-link {
@@ -230,7 +230,7 @@ a.plate:hover {
 
 /* Custom pages */
 #terms-page {
-    
+
   padding-top: 5px;
   padding-bottom: 10px;
 

@@ -1,87 +1,153 @@
 <template name="dietPage">
   <div class="container" id="page">
-    <h1>Diet (beta)</h1>
-    
+    <h1>Diet</h1>
+
     <p>
       Whether you want to lose weight or gain muscle, diet is the key ingredient. To get started adjusting your diet, first you need to figure out your Total Daily Energy Expediture (TDEE), which measures the amount of calories your body needs to function in a day, and then find out how many calories to eat in a day based on your goals.
     </p>
 
-    <h4>How many calories should I eat in a day?</h4>
-    <form class="tdee-form">
-      <div class="section">
-        <span class="title">Gender</span>
-        <div class="controls">
-          <input type="radio" name="gender" id="male" value="male" {{isMale}}> <label for="male">Male</label>
-          <input type="radio" name="gender" id="female" value="female" {{isFemale}}> <label for="female">Female</label>
-        </div>
-      </div>
-      <div class="section">
-        <span class="title">Age</span>
-        <div class="controls">
-          <input type="number" value="{{age}}" name="age" id="age"> <label for="age">Years</label>
-        </div>
-      </div>
-      <div class="section">
-        <span class="title">Height</span>
-        <div class="controls">
-          <input type="number" value="{{heightFeet}}" name="height-feet" id="height-feet" min="0" max="8"> <label for="height-feet">ft</label>
-          <input type="number" value="{{heightInches}}" name="height-inches" id="height-inches" min="0" max="12" step="0.5"> <label for="height-inches">in</label>
+    <h3>How many calories should I eat in a day?</h3>
 
+    <hr>
 
-          <span class="or">or</span>
+    <form class="tdee-form form-horizontal">
 
-          <input type="number" value="{{heightCm}}" name="height-cm" id="height-cm" min="0"> <label for="height-cm">cm</label>
+      <div class="form-group">
+        <label for="gender" class="col-sm-2 control-label">Gender</label>
+        <div class="col-sm-8">
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="male" value="male" {{isMale}}> Male</label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" id="female" value="female" {{isFemale}}> Female</label>
         </div>
       </div>
 
-      <div class="section">
-        <span class="title">Weight</span>
-        <div class="controls">
-          <input type="number" value="{{weightLbs}}" name="weight-lbs" id="weight-lbs" min="0"> <label for="weight-lbs">lbs</label>
-
-          <span class="or">or</span>
-
-          <input type="number" value="{{weightKg}}" name="weight-kg" id="weight-kg" min="0" step=".1"> <label for="weight-kg">kg</label>
+      <div class="form-group">
+        <label for="age" class="col-sm-2 control-label">Age</label>
+        <div class="col-sm-2">
+          <input type="number" class="form-control" value="{{age}}" name="age" id="age">
         </div>
       </div>
 
-      <div class="section">
-        <span class="title">Exercise</span>
-        <div class="controls">
-          <input type="range" min="1.2" max="1.9" step=".01" value="{{stressLevel}}" name="stress-level" id="stress-level" />
-          <label for="stress-level" id="stress-level-label">{{stressLevelText}}</label>
+      <div class="form-group">
+        <label for="system" class="col-sm-2 control-label">System</label>
+        <div class="col-sm-8">
+          <label class="radio-inline">
+            <input type="radio" name="system" id="imperial" value="imperial" {{isImperial}}> Imperial</label>
+          <label class="radio-inline">
+            <input type="radio" name="system" id="metric" value="metric" {{isMetric}}> Metric</label>
         </div>
       </div>
 
-      <div class="section">
-        <span class="title">Goal</span>
-        <div class="controls">
-          <select name="goal-rate" id="goal-rate">
+      <div class="form-group">
+        <label for="height" class="col-xs-2 control-label">Height</label>
+
+        {{#if isImperial}}
+
+        <div class="col-sm-2">
+          <input type="number" class="form-control" value="{{heightFeet}}" name="height-feet" id="height-feet" min="0" max="8">
+        </div>
+        <div class="col-sm-1">
+          <label for="height-feet" class="control-label">ft</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="number" class="form-control" value="{{heightInches}}" name="height-inches" id="height-inches" min="0" max="12" step="0.5">
+        </div>
+        <div class="col-sm-1">
+          <label for="height-inches" class="control-label">in</label>
+        </div>
+
+        {{else}}
+
+        <div class="col-sm-2">
+          <input type="number" class="form-control" value="{{heightCm}}" name="height-cm" id="height-cm" min="0">
+        </div>
+        <div class="col-sm-1">
+          <label for="height-cm" class="control-label">cm</label>
+        </div>
+
+        {{/if}}
+
+      </div>
+
+      <div class="form-group">
+        <label for="weight" class="col-sm-2 control-label">Weight</label>
+
+        {{#if isImperial}}
+
+        <div class="col-sm-2">
+
+          <input type="number" class="form-control" value="{{weightLbs}}" name="weight-lbs" id="weight-lbs" min="0">
+
+        </div>
+        <div class="col-sm-1">
+
+          <label for="weight-lbs" class="control-label">lbs</label>
+
+        </div>
+
+        {{else}}
+
+        <div class="col-sm-2">
+
+          <input type="number" class="form-control" value="{{weightKg}}" name="weight-kg" id="weight-kg" min="0" step=".1">
+
+        </div>
+        <div class="col-sm-1">
+
+          <label for="weight-kg" class="control-label">kg</label>
+        </div>
+
+        {{/if}}
+      </div>
+
+      <div class="form-group">
+        <label for="exercise" class="col-sm-2 control-label">Exercise</label>
+        <div class="col-sm-6">
+
+          <select class="form-control" name="exercise-level" id="exercise-level">
+            {{#each exerciseLevels}}
+              <option value="{{option}}" {{exerciseLevelSelected}}>{{text}}</option>
+            {{/each}}
+          </select>
+
+          <!-- <input class="form-control" type="range" min="1.2" max="1.9" step=".01" value="{{stressLevel}}" name="stress-level" id="stress-level" />
+          <label for="stress-level" id="stress-level-label">{{stressLevelText}}</label> -->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="goal" class="col-sm-2 control-label">Goal</label>
+        <div class="col-sm-4">
+          <select class="form-control" name="goal-rate" id="goal-rate">
             {{#each goalOptions}}
               <option value="{{option}}" {{goalSelected}}>{{text}}</option>
             {{/each}}
           </select>
-          
         </div>
       </div>
 
+    </form>
+
       {{#if tdee}}
-      <div class="section">
-        <span class="title">Result</span>
-        <div class="controls">
+        <h3>Result</h3>
+        <div class="alert alert-info" role="alert">
         To <b>{{goalRateText}}</b>, eat <b>{{calories}}</b> calories per day. *
         </div>
-      </div>
       {{/if}}
-     
-    </form>
+
+
 
     <p>
       * {{explanation}} ({{tdee}}). Your Basal Metabolic Rate (BMR) is {{bmr}}.
     </p>
-    
-    
 
+    <p>
+      BMR &amp; TDEE calculated using the <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate#BMR_estimation_formulas">Mifflin-St Jeor</a> equation.
+    </p>
+
+
+    <hr>
 
 
     <h4>Links</h4>
