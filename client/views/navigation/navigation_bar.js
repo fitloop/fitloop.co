@@ -7,12 +7,6 @@ Template.navigationBar.helpers({
   }
 })
 
-Template.navigationBar.rendered = function() {
-  var nav = responsiveNav(".nav-collapse", {
-    label: '<i class="fa fa-bars"></i>'
-  });
-}
-
 Template.navigationBar.events({
 	'click #logout-link': function(e,t) {
 		e.preventDefault();

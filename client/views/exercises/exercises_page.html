@@ -1,60 +1,62 @@
 <template name="exercisesPage">
   <div id="exercisesPage">
     <div class="container" id="page">
-    
+
       <div class="exercise-library">
         <h1>Exercises</h1>
-      
-        <div class="view-control">
-          View: 
-          
-          {{#if showListView}}
-            List
-          {{else}}
-            <a class='showListView' href="#">List</a>
-          {{/if}}
-          
-           | 
 
-          {{#if showGridView}}
-            Grid
-          {{else}}
-            <a class='showGridView' href="#">Grid</a>
-          {{/if}}
-          
+        <div class="view-control btn-toolbar" role="toolbar" aria-label="...">
+
+          <div class="btn-group" role="group" aria-label="...">
+
+            {{#if showListView}}
+
+            <button type="button" class="btn btn-default active" id="showListView"><i class="fa fa-th-list"></i> List</button>
+            <button type="button" class="btn btn-default" id="showGridView"><i class="fa fa-th"></i> Grid</button>
+
+            {{else}}
+
+            <button type="button" class="btn btn-default" id="showListView"><i class="fa fa-th-list"></i> List</button>
+            <button type="button" class="btn btn-default active" id="showGridView"><i class="fa fa-th"></i> Grid</button>
+
+            {{/if}}
+
+          </div>
 
         </div>
-        
+
         {{#if showGridView}}
           {{> exercisesGrid exercises}}
         {{else}}
           {{> exercisesList exercises}}
         {{/if}}
       </div>
-      
+
     </div>
   </div>
-  
+
 </template>
 
 <template name="exercisesGrid">
-  <div class="grid-container">
+  <ul class="small-block-grid-1 medium-block-grid-3">
   {{#each this}}
-    <a class="exercise-grid-item" href="/exercises/{{slug}}">
-      <img src="//img.youtube.com/vi/{{videoId}}/mqdefault.jpg">
-      <span class="text">{{name}}</span>
-    </a>
+    <li>
+      <a class="exercise-grid-item" href="/exercises/{{slug}}">
+        <img src="//img.youtube.com/vi/{{videoId}}/mqdefault.jpg">
+        <span class="text">{{name}}</span>
+      </a>
+    </li>
   {{/each}}
-  </div>
+  </ul>
 </template>
 
 
 <template name="exercisesList">
-  <div class="list-container">
-  {{#each this}}
-    <a class="exercise-list-item" href="/exercises/{{slug}}">
-      <span class="text">{{name}}</span>
-    </a>
-  {{/each}}
+  <div class="list-group">
+    {{#each this}}
+      <a class="list-group-item" href="/exercises/{{slug}}">
+        <b>{{name}}</b>
+      </a>
+    {{/each}}
   </div>
 </template>

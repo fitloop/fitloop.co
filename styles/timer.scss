@@ -1,0 +1,84 @@
+.control-bar {
+  background: #6B377F;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 320px;
+  height: 60px;
+  border-top: 2px solid #ccc;
+}
+
+/* TIMER */
+
+.timer-panel {
+
+  color: #fff;
+
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -160px;
+  z-index: 1000;
+  // background: #fff;
+  width: 320px;
+  height: 60px;
+  padding: 10px;
+  
+
+  #timer {
+    z-index: 2000;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 7px;
+    line-height: 1em;
+  }
+
+  .time-select, .button {
+    font-size: 14px;
+    padding: 7px;
+  }
+
+  .cover-select {
+    position: absolute;
+    width: 94px;
+    height: 100%;
+    background: #6B377F;
+    top: 2px;
+    z-index: 1500;
+
+  }
+
+  .time-select {
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+
+    color: #222;
+    z-index: 1000;
+
+    background: white;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .button {
+    background: none;
+    // color: #444;
+    position: relative;
+    left: 120px;
+    width: 30px;
+    height: 100%;
+    &:hover {
+      background: rgba(255,255,255,0.2);
+    }
+  }
+}

@@ -1,23 +1,25 @@
 <template name="layout">
+    
     {{> navigationBar}}
-    <div id="wrap">
-      {{> yield}}
+  
+      <div class="row">
+        <div class="large-12 columns">
+          {{> yield}}
+        </div>
+      </div>
+      
 
       <div id="footer">
         {{> footer}}
         {{> feedback}}
       </div>
 
-
-    </div>
+      {{initFoundation}}
 
 </template>
 
 <template name="routineLayout">
   {{> navigationBar}}
-    <div id="wrap">
-      {{> yield}}
-    </div>
-<!-- A link to launch the Classic Widget -->
-
+  {{> yield}}
+  {{initFoundation}}
 </template>

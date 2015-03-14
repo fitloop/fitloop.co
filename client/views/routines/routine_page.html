@@ -1,21 +1,28 @@
 <template name="routinePage">
-  
+
 
   <div id="routine-page">
-    <div class="container">
-      <div class="selection-panel">
-        {{> routine}}
-        {{> footer}}
-      </div>
-      <div class="detail-panel">
-        {{> exerciseInfo}}
 
-      </div>
-    </div>
+    <div class="selection-panel">
+      {{> routine}}
 
-    <div class="control-bar">
-      {{> timer}}
+      <div class="control-bar">
+        {{> timer}}
+      </div>
+
     </div>
-  </div>
     
+    <div class="detail-panel">
+
+      <div class="exercise-panel">
+        {{> exerciseInfo}}
+      </div>
+
+      {{> footer}}
+      
+    </div>
+
+    
+  </div>
+
 </template>

@@ -1,15 +1,17 @@
 <template name="routine">
-  
+
   <div class="routine">
-    <h2>{{name}}</h2>
+
+    <header>
+      <h2>{{name}}</h2>
+      {{> logWorkout}}
+    </header>
 
     <div class="description">
-      <pre>{{description}}</pre>
-      <br/>
-      Source: <a href="{{source}}" target="_blank">{{source}}</a>
+      <!-- <pre>{{description}}</pre> -->
+      <b>Perform 3 days/week</b>
+      <!-- Source: <a href="{{source}}" target="_blank">{{source}}</a> -->
     </div>
-
-    {{> logWorkout}}
 
     <div class="alert alert-warning">
       <b>If something hurts, stop!</b>
@@ -21,9 +23,9 @@
           <pre>{{notes}}</pre>
         </div>
       {{/if}}
-      <div class="panel">
+      <div class="exercise-item">
         <h3>{{name}}</h3>
-        <ul>
+        <ul class="list-group">
           {{#each exercises}}
             <li>{{> exerciseItem}}</li>
           {{/each}}
@@ -31,7 +33,5 @@
       </div>
     {{/each}}
 
-    {{> logWorkout}}
-    
   </div>
 </template>

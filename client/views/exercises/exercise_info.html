@@ -1,6 +1,10 @@
 <template name="exerciseInfo">
   <div class="exercise-info">
-    <div class="panel-body">
+      
+      <h4>
+        {{exercise.name}}
+      </h4>
+
       <div class="video-section">
         {{#if exercise.videoId}}
           {{#with exercise}}
@@ -11,13 +15,6 @@
         {{/if}}
       </div>
 
-      <div class="container">
-        <h3 class="panel-title">
-          {{exercise.name}}
-        </h3>
-
-        <pre class="notes">{{exercise.notes}}</pre>
-
       {{#if exercise.equipment}}
         <h5>Equipment</h5>
         {{#each exercise.equipment}}
@@ -25,10 +22,16 @@
         {{/each}}
       {{/if}}
 
+      <div class="panel-body">
+        
+
+        <pre class="notes">{{exercise.notes}}</pre>
+
+      
+
       <br/>
         {{> feedback}}
 
       </div>
-    </div>
   </div>
 </template>

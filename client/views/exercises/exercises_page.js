@@ -8,15 +8,15 @@ Template.exercisesPage.helpers({
 });
 
 Template.exercisesPage.events({
-	'click .showListView' : function() {
+	'click #showListView' : function() {
 		Session.set('listOrGridView', 'list');
 	},
-	'click .showGridView' : function() {
+	'click #showGridView' : function() {
 		Session.set('listOrGridView', 'grid');
 	},
 
 })
 
 Template.exercisesPage.rendered = function() {
-  document.title = "Exercises - Fitloop"; 
+  document.title = "Exercises - Fitloop";
 }

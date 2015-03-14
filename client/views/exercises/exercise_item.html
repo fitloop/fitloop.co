@@ -1,5 +1,15 @@
 <template name="exerciseItem">
-  <a class="list-group-item exercise" href="/exercises/{{exercise.slug}}">{{#if prefix}}{{prefix}}: {{/if}} {{exercise.name}} {{#if notes}}({{notes}}){{/if}}</a>
+  <a class="exercise list-group-item" href="/exercises/{{exercise.slug}}">
+		{{#if prefix}}
+			<span class="supertext">{{prefix}}</span>
+		{{/if}}
+		
+		<span class="exercise-name">{{exercise.name}} </span>
+
+		
+	  {{#if notes}}({{notes}}){{/if}}
+
+  </a>
 
   <!-- <a class="list-group-item exercise" href="/exercises/{{exercise.slug}}">{{exercise.name}}</a> -->
 </template>

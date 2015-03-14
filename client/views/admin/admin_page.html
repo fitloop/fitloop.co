@@ -1,37 +1,92 @@
 <template name="adminPage">
-	
+
   <div class="container" id="admin-page">
 
     <h1>Admin</h1>
 
-    <h2>Add Exercise</h2>
+		<!-- <ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="#">Exercises</a></li>
+			<li role="presentation"><a href="#">Users</a></li>
+		</ul> -->
 
-    <form>
-      <label>Name</label>
-      <input type="text" id="exercise-name">
+		<div role="tabpanel">
 
-      <label>Slug</label>
-      <input type="text" id="exercise-slug">
-      
-      <label>VideoId</label>
-      <input type="text" id="exercise-videoid">
-      
-      <label>Notes</label>
-      <textarea id="exercise-notes"></textarea>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
 
-      <input type="submit" value="Save" id="save_exercise">
-    </form>
-    
-    <h2>All Exercises</h2>
-    <ul>
-    {{#each exercises}}
-      <li>{{name}}</li>
-    {{/each}}  
-    </ul>
-    
-
-
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">...</div>
+    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+    <div role="tabpanel" class="tab-pane" id="settings">...</div>
   </div>
-	
 
+</div>
+
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addExercise">
+			Add Exercise
+		</button>
+
+		{{> addExerciseModal}}
+
+
+
+    <h2>All Exercises</h2>
+    <div class="list-group">
+    {{#each exercises}}
+      <a href="#" class="list-group-item">{{name}}</a>
+    {{/each}}
+	</div>
+  </div>
+
+</template>
+
+
+<template name="addExerciseModal">
+	<!-- Modal -->
+	<div class="modal fade" id="addExercise" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Add Exercise</h4>
+				</div>
+				<div class="modal-body">
+
+					<form>
+						<label>Name
+						<input class="form-control" type="text" id="exercise-name">
+					</label>
+
+						<label>Slug
+							<input class="form-control" type="text" id="exercise-slug">
+						</label>
+
+						<label>VideoId
+							<input class="form-control" type="text" id="exercise-videoid">
+						</label>
+
+						<label>Notes
+							<textarea class="form-control" id="exercise-notes"></textarea>
+						</label>
+
+						<input type="submit" value="Save" id="save_exercise">
+					</form>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

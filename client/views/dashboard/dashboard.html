@@ -1,9 +1,6 @@
 <template name="dashboard">
 
-  <div class="container">
-
-    <div id="page">
-
+  <div class="container" id="page">
 
       <!-- Upcoming Features:
         - Better Tracker
@@ -16,6 +13,8 @@
         <span id="username">Welcome, {{currentUser.profile.displayName}}!</span>
       </section>
 
+      <a href="/admin">admin</a>
+
       <section id="publicSetting">
 
         {{#if currentUser.profile.public}}
@@ -24,22 +23,22 @@
           <span>New! Set your profile to public, and share your workout logs with friends.</span>
           <a href="#" id="setToPublic">Set Profile to Public</a>
         {{/if}}
-
-
       </section>
 
+
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Overview</a></li>
+        <li role="presentation"><a href="#">Log</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Settings</a></li>
+      </ul>
 
 
       <section id="dailyTracker">
         {{> workoutTracker}}
-
       </section>
-    </div>
-
 
   </div>
-
-
 
   <!-- <h4>Track Personal Metrics</h4>
   <p>You can track any personal metric, such as weight or resting heart rate, with a tracker. Click the "New Tracker" button to track any metric changing over time. You can create as many trackers as you like.</p>
@@ -71,33 +70,33 @@
 </template>
 
 <template name="addTrackerModal">
-<!-- Modal -->
-<div class="modal fade" id="addTrackerModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="modalLabel">Add a New Tracker</h4>
-      </div>
-      <form role="form">
-      <div class="modal-body">
+  <!-- Modal -->
+  <div class="modal fade" id="addTrackerModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="modalLabel">Add a New Tracker</h4>
+        </div>
+        <form role="form">
+        <div class="modal-body">
 
-          <div class="form-group">
-            <label for="trackerName">Tracker Name</label>
-            <input name="trackerName" type="text" class="form-control" id="trackerName" placeholder="Enter tracker name">
-          </div>
-          <div class="form-group">
-            <label for="units">Unit of Measure</label>
-            <input name="units" type="text" class="form-control" id="units" placeholder="lbs, kg, bpm, etc.">
-          </div>
+            <div class="form-group">
+              <label for="trackerName">Tracker Name</label>
+              <input name="trackerName" type="text" class="form-control" id="trackerName" placeholder="Enter tracker name">
+            </div>
+            <div class="form-group">
+              <label for="units">Unit of Measure</label>
+              <input name="units" type="text" class="form-control" id="units" placeholder="lbs, kg, bpm, etc.">
+            </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-      </form>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 </template>

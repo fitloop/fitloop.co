@@ -1,31 +1,34 @@
 <template name="loginPage">
 
-	<div id="login-page" class="account-page">
+	<div class="container">
 
-		<div id="account-form-box">
+		<div class="row">
 
-			<h1>Log in</h1>
+			<div id="account-form-box" class="col-sm-6 col-sm-offset-3">
 
-			<p>
-				Need an account? <a href="{{pathFor 'signupPage'}}">Sign up here</a>.
-			</p>
+				<h1>Log in</h1>
 
-			{{#if error}}
-			<div class="alert alert-danger" role="alert">
-				{{error}}
+				<p>
+					Need an account? <a href="{{pathFor 'signupPage'}}">Sign up here</a>.
+				</p>
+
+				{{#if error}}
+				<div class="alert alert-danger" role="alert">
+					{{error}}
+				</div>
+				{{/if}}
+
+				<form id="login-form" action="action">
+					<div class="form-group">
+						<input type="text" class="form-control" id="login-email" placeholder="username or email" />
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="login-password" placeholder="password" />
+					</div>
+					<input class="btn btn-success" type="submit" id="login-button" value="Log in" /> <a href="/reset-password">Forgot Password?</a>
+				</form>
+
 			</div>
-			{{/if}}
-
-			<form id="login-form" action="action">
-				<div class="form-group">
-					<input type="text" class="form-control" id="login-email" placeholder="username or email" />
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control" id="login-password" placeholder="password" />
-				</div>
-				<input class="btn btn-success" type="submit" id="login-button" value="Log in" /> <a href="/reset-password">Forgot Password?</a>
-			</form>
-
 		</div>
 	</div>
 

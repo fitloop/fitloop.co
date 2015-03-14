@@ -1,31 +1,34 @@
 <template name="signupPage">
 
-	<div id="signup-page" class="account-page">
+	<div class="container">
 
-		<div id="account-form-box">
+		<div class="row">
 
-			<h1>Sign up</h1>
+			<div id="account-form-box" class="col-sm-6 col-sm-offset-3">
 
-			{{#if error}}
-			<div class="alert alert-danger" role="alert">
-				{{error}}
+				<h1>Sign up</h1>
+
+				{{#if error}}
+				<div class="alert alert-danger" role="alert">
+					{{error}}
+				</div>
+				{{/if}}
+
+				<form action="action" id="signup-form">
+					<div class="form-group">
+						<input type="username" class="form-control" id="account-username" placeholder="username">
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" id="account-email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="account-password" placeholder="password">
+					</div>
+
+						<input type="submit" class="btn btn-primary" id="create-account" value="Sign Up">
+
+				</form>
 			</div>
-			{{/if}}
-
-			<form action="action" id="signup-form">
-				<div class="form-group">
-					<input type="username" class="form-control" id="account-username" placeholder="username">
-				</div>
-				<div class="form-group">
-					<input type="email" class="form-control" id="account-email" placeholder="email">
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control" id="account-password" placeholder="password">
-				</div>
-
-					<input type="submit" class="btn btn-primary" id="create-account" value="Sign Up">
-
-			</form>
 		</div>
 
 	</div>

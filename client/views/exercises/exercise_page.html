@@ -19,16 +19,16 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-sm-6">
         <div class="video">
           {{#if videoId}}
             {{> exerciseVideo}}
           {{else}}
-            <span class="message">Please select an exercise on the left.</span>
+            <span class="message">No exercise video</span>
           {{/if}}
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-sm-6">
         {{#if notes}}
           <h4>Notes</h4>
           <pre class="notes">{{notes}}</pre>

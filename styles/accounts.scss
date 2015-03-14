@@ -1,19 +1,8 @@
-.account-page {
-
-	height: 400px;
-
-	#account-form-box {
-		margin: 0 auto;
-		width: 300px;
-
-		position: relative;
-		top: 50px;
-
-		.error-box {
-			margin-bottom: 20px;
-			background: #e8b9b9;
-			color: #8e2a2c;
-			padding: 10px;
-		}
-	}
+#account-form-box {
+	padding: 20px;
+	position: relative;
+	top: 50px;
+	background: #fff;
+	box-shadow: 0px 0px 5px #ddd;
+	margin-bottom: 100px;
 }
