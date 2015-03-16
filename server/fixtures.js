@@ -1,35 +1,28 @@
 // // console.log(Exercises.findOne({slug: 'wall-extensions'})._id);
 
-if(Equipment.find().count() === 0) {
+if(Equipment.find().count() === 4) {
 	var equipment = [
 		{
-			name: "Aylio 3 Exercise Bands",
-			price: "About $20",
-			link: "http://www.amazon.com/gp/product/B0026PMD70/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B0026PMD70&linkCode=as2&tag=fitloop-20",
-			thumbnail: "//s3.amazonaws.com/fitloop/equipment/exercise-bands.jpg",
-			slug: "aylio-3-bands"
+			name: "Aurorae Classic Yoga Mat",
+			price: "About $35",
+			link: "//www.amazon.com/gp/product/B004TN51EE/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B004TN51EE&linkCode=as2&tag=fitloop-20",
+			thumbnail: "//s3.amazonaws.com/fitloop/equipment/yoga-mats.jpg",
+			slug: "aurorae-yoga-mat"
 		},
 		{ 
-			name: "Iron Gym Total Upper Body Workout Bar",
-			price: "About $33",
-			link: "//www.amazon.com/gp/product/B001EJMS6K/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B001EJMS6K&linkCode=as2&tag=fitloop-20",
-			thumbnail: "//s3.amazonaws.com/fitloop/equipment/pullup-bar.jpg",
-			slug: "iron-gym-total-upper"
+			name: "Stamina 1690 Power Tower",
+			price: "About $100",
+			link: "//www.amazon.com/gp/product/B002Y2SUU4/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B002Y2SUU4&linkCode=as2&tag=fitloop-20",
+			thumbnail: "//s3.amazonaws.com/fitloop/equipment/power-tower.jpg",
+			slug: "stamina-power-tower"
 		},
 		{ 
-			name: "Aylio 3 Loop Bands",
-			price: "About $20",
-			link: "http://www.amazon.com/gp/product/B0054MQUHQ/ref=as_li_ss_il?ie=UTF8&camp=1789&creative=390957&creativeASIN=B0054MQUHQ&linkCode=as2&tag=fitloop-20",
-			thumbnail: "//s3.amazonaws.com/fitloop/equipment/exercise-loops.jpg",
-			slug: "aylio-3-loop-bands",
+			name: "Lacrosse Ball",
+			price: "About $7",
+			link: "//www.amazon.com/gp/product/B009FMNHL8/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B009FMNHL8&linkCode=as2&tag=fitloop-20",
+			thumbnail: "//s3.amazonaws.com/fitloop/equipment/lacrosse-ball.jpg",
+			slug: "lacrosse-ball"
 		},
-		{
-			name: "Nayoya Gymnastic Rings",
-			link: "http://www.amazon.com/gp/product/B009RA6C1K/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B009RA6C1K&linkCode=as2&tag=fitloop-20",
-			price: "About $32",
-			slug: "nayoya-gymnastic-rings",
-			thumbnail: "//s3.amazonaws.com/fitloop/equipment/rings.jpg"
-		}
 	];
 
 	_.each(equipment, function(doc) {
