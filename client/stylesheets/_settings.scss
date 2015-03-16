@@ -141,8 +141,8 @@ $modules: () !default;
 // Global
 
 // We use these to define default font weights
-// $font-weight-normal: normal !default
-// $font-weight-bold: bold !default
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
 
 // We use these to control various global styles
 // $body-bg: #fff;
@@ -1294,8 +1294,8 @@ $topbar-height: 60px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-weight: $font-weight-normal;
+$topbar-title-font-size: rem-calc(22);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1316,7 +1316,7 @@ $topbar-link-font-size: rem-calc(16);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: #555555;
-// $topbar-link-bg-hover: #272727;
+$topbar-link-bg-hover: #251F49;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

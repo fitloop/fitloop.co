@@ -4,20 +4,22 @@
 
     <h2>{{name}}</h2>
       
-    <div class="log-panel">
-      {{> logWorkout}}  
-    </div>
-    
-
-    <div class="description">
-      <!-- <pre>{{description}}</pre> -->
-      Perform 3 days/week
-      <!-- Source: <a href="{{source}}" target="_blank">{{source}}</a> -->
+    <div class="button-panel">
+      <a href="/routine-guide" class="button" id="guide-button"><i class="fa fa-book"></i>
+ Guide</a>
+      {{> logWorkout}}
     </div>
 
     <div class="alert alert-warning">
-      <b>If something hurts, stop!</b>
+      <b>Careful: If something hurts, stop!</b>
     </div>
+
+    <!-- <div class="description"> -->
+      <!-- <pre>{{description}}</pre> -->
+      <!-- Perform 3 days/week -->
+      <!-- Source: <a href="{{source}}" target="_blank">{{source}}</a> -->
+    <!-- </div> -->
+
 
     {{#each progressions}}
       {{#if notes}}

@@ -24,6 +24,7 @@ $timer-panel-color: #403B73;
   width: 320px;
   height: 60px;
   padding: 10px;
+
   
 
   #timer {
@@ -35,6 +36,7 @@ $timer-panel-color: #403B73;
     font-weight: bold;
     padding: 7px;
     line-height: 1em;
+
   }
 
   .time-select, .button {
@@ -47,28 +49,34 @@ $timer-panel-color: #403B73;
     width: 94px;
     height: 100%;
     background: $timer-panel-color;
-    top: 2px;
+    top: 2px;appearance: none;
     z-index: 1500;
 
   }
 
   .time-select {
-    width: 110px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 120px;
     height: 30px;
     position: absolute;
     top: 15px;
     left: 10px;
-
+    overflow: hidden;
     color: #222;
     z-index: 1000;
-
-    background: white;
+    
+    background-color: #fff;
+    background-image: url('/images/timerset.png') ;
+    
     padding: 5px;
     font-size: 16px;
     line-height: 1;
     border: 0;
     border-radius: 0;
-    -webkit-appearance: none;
+    
   }
 
   .button {
@@ -76,10 +84,10 @@ $timer-panel-color: #403B73;
     // color: #444;
     position: relative;
     left: 120px;
-    width: 30px;
+    width: 40px;
     height: 100%;
     &:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.3);
     }
   }
 }

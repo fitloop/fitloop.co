@@ -1,6 +1,6 @@
 <template name="dashboard">
 
-  <div class="container" id="page">
+  <div id="page">
 
       <!-- Upcoming Features:
         - Better Tracker
@@ -13,26 +13,17 @@
         <span id="username">Welcome, {{currentUser.profile.displayName}}!</span>
       </section>
 
-      <a href="/admin">admin</a>
+      <hr>
 
       <section id="publicSetting">
+        <h3>Settings</h3>
 
         {{#if currentUser.profile.public}}
-          <span>Your public profile link is <a href="https://fitloop.co/user/{{currentUser.username}}">https://fitloop.co/user/{{currentUser.username}}</a> (<a href="#" id="setToPrivate">Set to Private</a>) </span>
+          <span>Your public profile link is <a href="/user/{{currentUser.username}}">https://fitloop.co/user/{{currentUser.username}}</a> (<a href="#" id="setToPrivate">Set to Private</a>) </span>
         {{else}}
-          <span>New! Set your profile to public, and share your workout logs with friends.</span>
           <a href="#" id="setToPublic">Set Profile to Public</a>
         {{/if}}
       </section>
-
-
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Overview</a></li>
-        <li role="presentation"><a href="#">Log</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Settings</a></li>
-      </ul>
-
 
       <section id="dailyTracker">
         {{> workoutTracker}}

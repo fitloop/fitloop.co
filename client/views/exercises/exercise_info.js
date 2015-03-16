@@ -1,6 +1,6 @@
 Template.exerciseInfo.helpers({
   exercise: function() {
-    return Exercises.findOne(Session.get('currentExerciseId')) || {};
+  	return Exercises.findOne(Session.get('currentExerciseId'));
   }
 });
 

@@ -1,39 +1,44 @@
 <template name="exerciseInfo">
 
-  <div class="video-section">
-    {{#if exercise.videoId}}
-      {{#with exercise}}
-        {{> exerciseVideo}}
-      {{/with}}
-    {{else}}
-      <span class="message">Please select an exercise on the left.</span>
-    {{/if}}
-  </div>
+  {{#if exercise}}
+    <div class="video-section">
+      {{#if exercise.videoId}}
+        {{#with exercise}}
+          {{> exerciseVideo}}
+        {{/with}}
+      {{else}}
+        <span class="message">No exercise video.</span>
+      {{/if}}
+    </div>
 
-  <div class="exercise-info">
+    <div class="exercise-info">
 
-    <h4>
-      {{exercise.name}}
-    </h4>
+      <h4>
+        {{exercise.name}}
+      </h4>
 
-    <hr>
+      <hr>
 
-    {{#if exercise.equipment}}
-      <h5>Equipment</h5>
+      {{#if exercise.equipment}}
+        <h5>Equipment</h5>
 
-      <ul class="small-block-grid-3">
-        {{#each exercise.equipment}}
-          <li>{{> equipmentItem}}</li>
-        {{/each}}
-      </ul>      
-    {{/if}}
+        <ul class="small-block-grid-3">
+          {{#each exercise.equipment}}
+            <li>{{> equipmentItem}}</li>
+          {{/each}}
+        </ul>      
+      {{/if}}
 
-    {{#if exercise.notes}}
-      <h5>Notes</h5>
-      <pre class="notes">{{exercise.notes}}</pre>
-    {{/if}}
+      {{#if exercise.notes}}
+        <h5>Notes</h5>
+        <pre class="notes">{{exercise.notes}}</pre>
+      {{/if}}
+        
       
-    
-    {{> feedback}}
-  </div>
+      {{> feedback}}
+    </div>
+  {{else}}
+    {{> routineGuide}}
+  {{/if}}
+  
 </template>

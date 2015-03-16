@@ -5,24 +5,18 @@
       <div class="exercise-library">
         <h1>Exercises</h1>
 
-        <div class="view-control btn-toolbar" role="toolbar" aria-label="...">
-
-          <div class="btn-group" role="group" aria-label="...">
-
-            {{#if showListView}}
-
-            <button type="button" class="btn btn-default active" id="showListView"><i class="fa fa-th-list"></i> List</button>
-            <button type="button" class="btn btn-default" id="showGridView"><i class="fa fa-th"></i> Grid</button>
-
-            {{else}}
-
-            <button type="button" class="btn btn-default" id="showListView"><i class="fa fa-th-list"></i> List</button>
-            <button type="button" class="btn btn-default active" id="showGridView"><i class="fa fa-th"></i> Grid</button>
-
-            {{/if}}
-
-          </div>
-
+        <div class="button-bar">
+          <ul class="button-group radius">
+          {{#if showListView}}
+            <li><a href="#" class="small button secondary" id="showGridView"><i class="fa fa-th"></i> Grid</a></li>
+            <li><a href="#" class="small button success" id="showListView"><i class="fa fa-th-list"></i> List</a></li>
+            
+          {{else}}
+            <li><a href="#" class="small button success" id="showGridView"><i class="fa fa-th"></i> Grid</a></li>
+            <li><a href="#" class="small button secondary" id="showListView"><i class="fa fa-th-list"></i> List</a></li>
+              
+          {{/if}}
+          </ul>
         </div>
 
         {{#if showGridView}}
@@ -52,11 +46,13 @@
 
 
 <template name="exercisesList">
-  <div class="list-group">
+  <ul class="exercise-list">
     {{#each this}}
-      <a class="list-group-item" href="/exercises/{{slug}}">
-        <b>{{name}}</b>
-      </a>
+      <li>
+        <a href="/exercises/{{slug}}">
+          <b>{{name}}</b>
+        </a>
+      </li>
     {{/each}}
-  </div>
+  </ul>
 </template>

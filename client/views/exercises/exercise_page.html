@@ -1,25 +1,17 @@
 <template name="exercisePage">
 
-  <div class="container" id="page">
+  <div id="page">
 
+    <h3>{{name}}</h3>
+    
+    <ul class="breadcrumbs">
+      <li><a href="{{pathFor 'homePage'}}">Home</a></li>
+      <li><a href="{{pathFor 'exercisesPage'}}">Exercises</a></li>
+      <li class="current">{{name}}</li>
+    </ul>
+    
     <div class="row">
-      <div class="col-md-12">
-        <h3>{{name}}</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <ol class="breadcrumb">
-          <li><a href="{{pathFor 'homePage'}}">Home</a></li>
-          <li><a href="{{pathFor 'exercisesPage'}}">Exercises</a></li>
-          <li class="active">{{name}}</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-6">
+      <div class="small-12 large-6 columns">
         <div class="video">
           {{#if videoId}}
             {{> exerciseVideo}}
@@ -28,18 +20,22 @@
           {{/if}}
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="small-12 large-6 columns">
         {{#if notes}}
           <h4>Notes</h4>
           <pre class="notes">{{notes}}</pre>
         {{/if}}
         {{#if equipment}}
           <h4>Equipment</h4>
+          <ul class="small-block-grid-2">
           {{#each equipment}}
-            {{> equipmentItem}}
+            <li>{{> equipmentItem}}</li>
           {{/each}}
+          </ul>
         {{/if}}
       </div>
     </div>
+
+
   </div>
 </template>

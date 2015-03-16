@@ -1,28 +1,24 @@
 <template name="profile">
 
-  <div id="profile-page">
+  <div id="page">
 
-    <div class="container">
+    <section id="profile">
+      <span id="username">{{this.username}}</span>
+    </section>
 
-      <section id="profile">
-        <span id="username">{{this.username}}</span>
+    <hr>
+
+    {{#if this.profile.public}}
+
+      <section id="dailyTracker">
+
+        {{> workoutTracker}}
+
       </section>
 
+    {{else}}
+      This user's profile is private.
+    {{/if}}
 
-
-      {{#if this.profile.public}}
-
-        <section id="dailyTracker">
-
-          {{> workoutTracker}}
-
-        </section>
-
-      {{else}}
-        This user's profile is private.
-      {{/if}}
-
-
-    </div>
   </div>
 </template>
