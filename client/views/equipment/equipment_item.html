@@ -1,8 +1,12 @@
 <template name="equipmentItem">
-    <div class="equipment-item">
-      <a class="item-image" href="{{equipment.link}}"><img border="0" src="{{equipment.thumbnail}}"></a>
-      <a class="item-name" href="{{equipment.link}}">{{equipment.name}}</a>
-      <span class="price">Price: {{equipment.price}}</span>
-      <a href="{{equipment.link}}" class="amazon button">Buy on Amazon</a>
+  <div class="equipment-item">
+    
+    <a class="item-image" href="{{equipment.link}}"><img border="0" src="{{equipment.thumbnail}}"></a>
+
+    <div class="image-overlay">
+    	<a class="item-name" href="{{equipment.link}}">{{equipment.name}}</a>
     </div>
+       
+    <a href="{{equipment.link}}" class="amazon button">Amazon</a>
+  </div>
 </template>

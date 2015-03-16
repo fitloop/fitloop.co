@@ -1,0 +1,56 @@
+.equipment-item {
+	// border: 1px solid #999;
+
+	position: relative;
+	
+	.item-image {
+		height: 110px;
+		display: block;
+		text-align: center;
+
+		img {
+			max-height: 100px;
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+
+	.image-overlay {
+
+		border: 1px solid #ddd;
+		display: none;
+
+		// background: -moz-linear-gradient(top, rgba(0,0,0,0) 25%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.3) 100%);
+		// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(96%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65)));
+		// background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 96%,rgba(0,0,0,0.65) 100%);
+		// background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 96%,rgba(0,0,0,0.65) 100%);
+		// background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 96%,rgba(0,0,0,0.65) 100%);
+		// background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 96%,rgba(0,0,0,0.65) 100%);
+		// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.item-name {
+			display: none;
+			position: absolute;
+			bottom: 35px;
+			left: 10px;
+			z-index: 50;
+			text-shadow: 0px 0px 6px #000;
+			color: #fff;
+			font-size: 16px;
+		}
+	}
+
+	.amazon {
+		display: block;
+		font-size: 14px;
+		padding: 5px;
+		margin: 0;
+		background: #309B45;
+	}
+}

@@ -1,5 +1,7 @@
+$timer-panel-color: #403B73;
+
 .control-bar {
-  background: #6B377F;
+  background: $timer-panel-color;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -7,7 +9,6 @@
   height: 60px;
   border-top: 2px solid #ccc;
 }
-
 /* TIMER */
 
 .timer-panel {
@@ -45,7 +46,7 @@
     position: absolute;
     width: 94px;
     height: 100%;
-    background: #6B377F;
+    background: $timer-panel-color;
     top: 2px;
     z-index: 1500;
 

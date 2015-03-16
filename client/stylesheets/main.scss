@@ -1,12 +1,12 @@
 @import "_settings.scss";
-@import "../.meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+@import "../../.meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 body {
   font-family: "Roboto Slab", Helvetica, Arial sans-serif;
   // color: #383838;
   height: 100%;
-  // background: rgb(245,247,245);
+  background: #EFF3F8;
   // padding-bottom: 20px;
 }
 
@@ -41,7 +41,6 @@ pre {
   padding: 10px;
   margin: 0px auto 20px;
   max-width: 450px;
-  border-radius: 3px;
   font-weight: 500;
 }
 

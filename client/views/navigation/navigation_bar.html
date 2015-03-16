@@ -14,17 +14,18 @@
     <section class="top-bar-section"> <!-- Right Nav Section -->
       <ul class="right">
         <li><a href="{{pathFor 'homePage'}}">Home</a></li>
+        <li><a href="/routines/bwf-recommended-beginner-routine">Routine</a></li>
         <li><a href="{{pathFor 'exercisesPage'}}">Exercises</a></li>
-        <li><a href="{{pathFor 'equipmentPage'}}">Equipment</a></li>
-        <li><a href="{{pathFor 'dietPage'}}">Diet</a></li>
+        <!-- <li><a href="{{pathFor 'equipmentPage'}}">Equipment</a></li> -->
+        <!-- <li><a href="{{pathFor 'dietPage'}}">Diet</a></li> -->
         <li><a href="{{pathFor 'aboutPage'}}">About</a></li>
 
         {{#if currentUser}}
             <li><a href="{{pathFor 'dashboard'}}">{{currentUser.profile.displayName}}</a></li>
-            <li><a id="logout-link" href="#">log out</a></li>
+            <li><a id="logout-link" href="#">Log out</a></li>
           {{else}}
-            <li><a href="{{pathFor 'loginPage'}}">log in</a></li>
-            <li><a href="{{pathFor 'signupPage'}}">sign up</a></li>
+            <li><a href="{{pathFor 'loginPage'}}">Log in</a></li>
+            <li><a href="{{pathFor 'signupPage'}}">Sign up</a></li>
           {{/if}}
       </ul> <!-- Left Nav Section --> 
     </section> 

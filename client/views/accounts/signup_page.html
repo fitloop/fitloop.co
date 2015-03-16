@@ -4,7 +4,7 @@
 
 		<div class="row">
 
-			<div id="account-form-box" class="col-sm-6 col-sm-offset-3">
+			<div id="account-form-box" class="medium-offset-4 medium-4 columns">
 
 				<h1>Sign up</h1>
 
@@ -15,17 +15,14 @@
 				{{/if}}
 
 				<form action="action" id="signup-form">
-					<div class="form-group">
-						<input type="username" class="form-control" id="account-username" placeholder="username">
-					</div>
-					<div class="form-group">
-						<input type="email" class="form-control" id="account-email" placeholder="email">
-					</div>
-					<div class="form-group">
-						<input type="password" class="form-control" id="account-password" placeholder="password">
-					</div>
+					
+					<input type="text" id="account-username" placeholder="username">
 
-						<input type="submit" class="btn btn-primary" id="create-account" value="Sign Up">
+					<input type="email" class="form-control" id="account-email" placeholder="email">
+
+					<input type="password" class="form-control" id="account-password" placeholder="password">
+
+					<input class="button small success" type="submit" id="create-account" value="Sign Up">
 
 				</form>
 			</div>

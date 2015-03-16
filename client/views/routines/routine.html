@@ -2,14 +2,16 @@
 
   <div class="routine">
 
-    <header>
-      <h2>{{name}}</h2>
-      {{> logWorkout}}
-    </header>
+    <h2>{{name}}</h2>
+      
+    <div class="log-panel">
+      {{> logWorkout}}  
+    </div>
+    
 
     <div class="description">
       <!-- <pre>{{description}}</pre> -->
-      <b>Perform 3 days/week</b>
+      Perform 3 days/week
       <!-- Source: <a href="{{source}}" target="_blank">{{source}}</a> -->
     </div>
 
