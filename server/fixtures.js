@@ -34,6 +34,11 @@ if(Equipment.find().count() === 4) {
 if (Exercises.find().count() === 0) {
 	var exercises = [
 		{
+		  name: "Rings Turned Out Suppoet Hold",
+		  slug: "rto-support",
+		  videoId: "8gmyhBScTLk"
+		},
+		{
 		  name: "Open Tuck L-sit",
 		  slug: "open-tuck-l-sit",
 		  videoId: "gc0-uVMGCSM",
