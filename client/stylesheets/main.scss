@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 body {
-  font-family: "Roboto Slab", Helvetica, Arial sans-serif;
+  font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
   // color: #383838;
   height: 100%;
   background: #EFF3F8;
@@ -16,14 +16,13 @@ pre {
   white-space: -o-pre-wrap; /* Opera 7 */
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   margin: 0;
   display: inline;
   border: 0;
   background: none;
   padding: 0;
   font-size: 14px;
-
 }
 
 

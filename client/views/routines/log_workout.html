@@ -3,9 +3,26 @@
 	{{#if isLogged}}
 	  <a href="#" class="button" id="undo-track-workout"><i class="fa fa-check"></i>  Logged (x)</a>
 	{{else}}
-	  <a href="#" class="button" id="track-workout"><i class="fa fa-pencil"></i> Log</a>
+	  <a href="#" class="button" id="track-workout" data-reveal-id="logWorkoutModal"><i class="fa fa-pencil"></i> Log</a>
 	{{/if}}
 	{{else}}
 	<a href="{{pathFor 'loginPage'}}" class="button" id="new-user-track-workout"><i class="fa fa-pencil"></i> Log</a>
 {{/if}}
+</template>
+
+<template name="logWorkoutModal">
+	<div id="logWorkoutModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		
+		{{> logWorkoutModalInner}}
+
+	</div>
+</template>
+
+<template name="logWorkoutModalInner">
+	<h4 id="modalTitle">Log Workout</h4>
+	<label>Notes
+    <textarea name="notes" id="log-notes" height="80" placeholder="Notes about your workout..."></textarea>
+  </label>
+  <a href="#" class="button radius success" id="log-button">Log</a>
+	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </template>

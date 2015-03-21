@@ -2,11 +2,12 @@
 
 	.workout-log-lines {
 		.title {
-			color: #aeaeae;
-			display: inline-block;
+			color: #9A54CB;
+			display: block;
+			margin-bottom: 5px;
 		}
 
-		.content,.routineName,.timeAgo {
+		.content, .routineName, .timeAgo {
 			display: inline-block;
 		}
 
@@ -14,6 +15,15 @@
 			font-size: 16px;
 			font-weight: 400;
 		}
+	
+		.notes {
+			display: block;
+			margin-top: 10px;
+			font-size: 14px;
+			background: #F8F1FD;
+			padding: 10px;
+		}
+
 	}
 
 	.workout-log {

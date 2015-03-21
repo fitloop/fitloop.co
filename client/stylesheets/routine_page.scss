@@ -191,8 +191,12 @@
         }
     }
   }
+}
 
-  
+#logWorkoutModal {
+  textarea[name="notes"] {
+    height: 200px;
+  }
 }
 
 

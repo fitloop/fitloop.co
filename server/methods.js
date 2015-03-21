@@ -29,8 +29,9 @@ Meteor.methods({
 
 	},
 
-	'logWorkout' : function(routineId) {
-
+	'logWorkout' : function(routineId, logNotes) {
+		check(routineId, String);
+		check(logNotes, String);
 		// At least 3 hours between logging the same routine
 		var date = new Date();
 		var start = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours()-3);
@@ -49,6 +50,7 @@ Meteor.methods({
 				userId: this.userId,
 				routineId: routineId,
 				routineName : Routines.findOne({_id:routineId}).name,
+				notes: logNotes,
 				day: new Date()
 			})
 		}

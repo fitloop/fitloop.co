@@ -11,9 +11,11 @@
 			
 			<div class="timeAgo">({{timePassed}})</div>
 			
-			<div class="notes">
-				{{notes}}
-			</div>
+			{{#if notes}}
+				<div class="notes">
+					<pre>{{notes}}</pre>
+				</div>
+			{{/if}}
 
 		</div>
 		

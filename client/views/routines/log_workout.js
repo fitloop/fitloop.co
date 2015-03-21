@@ -12,13 +12,12 @@ Template.logWorkout.helpers({
 
 Template.logWorkout.events({
 	'click #track-workout' : function(e,t) {
+		// var routineId = this._id;
 
-		var routineId = this._id;
-
-		if(Meteor.user())
-		{
-			Meteor.call('logWorkout', routineId)
-		}
+		// if(Meteor.user())
+		// {
+		// 		Meteor.call('logWorkout', routineId)
+		// }
 	},
 
 	'click #undo-track-workout' : function(e,t) {
@@ -30,3 +29,18 @@ Template.logWorkout.events({
 		}
 	}
 });
+
+Template.logWorkoutModalInner.events({
+	'click #log-button': function(e,t) {
+		e.preventDefault();
+
+		var routineId = this._id;
+		var logNotes = t.find('textarea[name="notes"]').value;
+		if(Meteor.user())
+		{
+			Meteor.call('logWorkout', routineId, logNotes);
+		}
+		$('#logWorkoutModal').foundation('reveal', 'close');
+		
+	}
+})

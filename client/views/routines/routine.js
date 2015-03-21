@@ -19,7 +19,3 @@ Template.routine.events({
     Session.set('currentExerciseId', null);
   }
 })
-
-
-
-
