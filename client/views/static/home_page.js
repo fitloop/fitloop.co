@@ -1,3 +1,3 @@
-Template.homePage.rendered = function() {
-	EmbedInstagram();
-}
+// Template.homePage.rendered = function() {
+// 	EmbedInstagram();
+// }
