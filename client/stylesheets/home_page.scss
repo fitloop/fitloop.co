@@ -1,0 +1,14 @@
+a#patreon {
+  display: block;
+  padding: 10px;
+  background: #F4EAE7;
+  color: #D4581E;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  // border-radius: 5px;
+
+  &:hover {
+    background: #EBD9D3;
+  }
+}
