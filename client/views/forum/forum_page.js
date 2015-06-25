@@ -9,7 +9,6 @@ Template.forumPage.rendered = function() {
 
 Template.forumPage.helpers({
   reddit_posts : function() {
-    console.log(Session.get('reddit_data'));
     return Session.get('reddit_data');
   }
 })
