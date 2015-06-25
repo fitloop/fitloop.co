@@ -1,0 +1,55 @@
+.forum-title {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.reddit-posts {
+
+  margin-left: 0;
+
+  li {
+    position: relative;
+    list-style-type: none;
+    text-decoration: none;
+    background: white;
+    // border-radius: 5px;
+
+    margin-bottom: 5px;
+
+    .score {
+
+      display: inline-block;
+      width: 60px;
+      padding: 15px;
+      background: #FFF3EE;
+      color: #9E6F5B;
+    }
+
+    .num-comments {
+      text-align: right;
+      position: absolute;
+      color: #999;
+      right: 10px;
+      top: 15px;
+    }
+
+    .title {
+      display: block;
+      position: absolute;
+      padding: 15px;
+      padding-right: 115px;
+      top: 0;
+      left: 60px;
+      right: 0;
+
+      h2 {
+        font-size: 16px;
+        display: inline-block;
+      }
+
+
+    }
+
+  }
+}

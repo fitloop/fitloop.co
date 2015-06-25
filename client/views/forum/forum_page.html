@@ -1,0 +1,21 @@
+<template name="forumPage">
+
+
+  <h1 class='forum-title'>Hot Topics from <a href="http://www.reddit.com/r/bodyweightfitness/">/r/bodyweightfitness</a></h1>
+  <ul class="reddit-posts">
+
+  {{#each reddit_posts}}
+
+    <li>
+      <div class="score">{{this.data.score}}</div>
+
+      <a class="title" href="{{this.data.url}}"><h2>{{this.data.title}}</h2></a>
+      <!-- {{#markdown}} {{this.data.selftext}} {{/markdown}} -->
+
+      <span class="num-comments">{{this.data.num_comments}} comments</span>
+    </li>
+
+  {{/each}}
+  </ul>
+
+</template>
