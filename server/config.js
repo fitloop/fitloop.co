@@ -20,19 +20,6 @@ Accounts.urls.enrollAccount = function (token) {
     return Meteor.absoluteUrl('enroll-account/' + token);
 };
 
-// process.env.MAIL_URL = "smtp://postmaster@fitloop.co:7z15aocxmxn1@smtp.mailgun.org:587/";
-
 Accounts.emailTemplates.siteName = "Fitloop";
 
 Accounts.emailTemplates.from = "Fitloop Accounts <no-reply@fitloop.co>";
-
-// Accounts.emailTemplates.enrollAccount.subject = function (user) {
-//     return "Welcome to Awesome Town, " + user.profile.name;
-// };
-
-// Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-//    return "You have been selected to participate in building a better future!"
-//      + " To activate your account, simply click the link below:\n\n"
-//      + url;
-// };
-
