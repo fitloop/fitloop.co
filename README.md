@@ -1,6 +1,8 @@
 # Fitloop
 Fitloop is an open fitness platform. Website: [fitloop.co](https://fitloop.co)
 
+We aim to create a community-driven fitness platform, with educational content, tools, and social features to make fitness freely attainable for everyone.
+
 <a href="https://fitloop-slack-invite.herokuapp.com/"><img src="http://fitloop-slack-invite.herokuapp.com/badge.svg"></a>
 
 Goals
